@@ -1,0 +1,5 @@
+Тестовая запись в файл 2025-06-06 00:20:16
+[2025-06-06 01:52:58] Auth log failed: User: 1, Action: 1, Success: true, Error: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0, Device: login, IP: 
+[2025-06-06 01:54:49] Auth log failed: User: 1, Action: 1, Success: true, Error: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0, Device: login, IP: 
+[2025-06-06 01:57:41] Auth log failed: User: 2, Action: 1, Success: true, Error: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0, Device: login, IP: 
+[2025-06-06 02:02:05] Auth log failed: User: 1, Action: 1, Success: true, Error: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0, Device: login, IP: 

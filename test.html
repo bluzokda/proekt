@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Тестирование update_stats.php</title>
+</head>
+<body>
+  <h2>Отправка данных в update_stats.php</h2>
+  <form id="testForm">
+    <label>Task Type:
+      <select name="task_type">
+        <option value="basic">Базовый</option>
+        <option value="advanced">Повышенный</option>
+      </select>
+    </label><br><br>
+
+    <label>Block:
+      <input type="text" name="block" value="Вклады">
+    </label><br><br>
+
+    <label>is_correct:
+      <select name="is_correct">
+        <option value="1">Правильно</option>
+        <option value="0">Неправильно</option>
+      </select>
+    </label><br><br>
+
+    <button type="submit">Отправить</button>
+  </form>
+
+  <div id="response"></div>
+
+  <script>
+    document.getElementById("testForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      try {
+        const response = await fetch("update_stats.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        document.getElementById("response").innerText = JSON.stringify(result, null, 2);
+      } catch (error) {
+        document.getElementById("response").innerText = "Ошибка: " + error.message;
+      }
+    });
+  </script>
+</body>
+</html>

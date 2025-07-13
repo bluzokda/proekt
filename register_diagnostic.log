@@ -1,0 +1,2199 @@
+[2025-06-05 20:02:51] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 6
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 20:02:51] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 179
+    [user_id] => 
+    [success] => 
+    [failure_reason] => database_error
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+    [exception] => SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'teztdu8356@atminmail.com' for key 'users.email'
+)
+
+
+[2025-06-05 20:02:56] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:28:52] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 8
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:28:59] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:28:59] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:00] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:00] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:01] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:01] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:01] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:02] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:02] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:02] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:02] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:02] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:03] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:03] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:03] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:03] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:04] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:04] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:04] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:04] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:04] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:05] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:05] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:05] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:05] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:06] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:06] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:06] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:06] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:07] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:07] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:07] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:07] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:07] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:08] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:08] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:08] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:08] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:08] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:09] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:09] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:09] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:09] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:09] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:10] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:10] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:10] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:11] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:11] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:12] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:29:13] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 46.0.12.142
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 OPR/119.0.0.0
+)
+
+
+[2025-06-05 23:31:33] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 9
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:36] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:37] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:37] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:37] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:37] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:37] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:38] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:38] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:38] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:38] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:38] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:31:38] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:40] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 10
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:41] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:42] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:42] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:42] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:42] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:43] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:43] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:43] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:43] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:43] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:45:44] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:48] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 11
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:50] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:50] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:50] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:50] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:51] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:51] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:51] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:51] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:51] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:51] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:52] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:52] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:52] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:52] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:52] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:49:53] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-05 23:59:08] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 12
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 00:09:42] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 13
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 00:20:58] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 14
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 00:26:25] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 15
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 00:36:40] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 16
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.136.21
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 12:08:47] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 17
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => mobile
+    [ip] => 15.204.217.12
+    [user_agent] => Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/22F76 Safari/604.1
+)
+
+
+[2025-06-06 12:08:59] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => mobile
+    [ip] => 15.204.217.12
+    [user_agent] => Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/22F76 Safari/604.1
+)
+
+
+[2025-06-06 21:18:29] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 18
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 21:18:31] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 21:18:31] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 21:18:32] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 95
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 21:58:56] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 19
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 22:17:40] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 133
+    [user_id] => 20
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:46] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:49] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:56] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:58] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:58] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:58] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:58] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:58] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:59] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:59] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:59] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:30:59] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:31:00] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:31:00] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:31:00] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:31:00] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:31:00] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:31:01] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:31:01] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:06] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 141
+    [user_id] => 21
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:08] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:10] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:12] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:12] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:13] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:13] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:13] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:13] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:13] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:14] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:14] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:14] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:14] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:14] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:15] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:15] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:15] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:15] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:16] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:32:16] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 96
+    [user_id] => 
+    [success] => 
+    [failure_reason] => email_exists
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:34:18] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 141
+    [user_id] => 22
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-06 23:35:53] Параметры для логирования:
+Array
+(
+    [file] => /home/c/ct47107/public_html/register.php
+    [line] => 141
+    [user_id] => 23
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.144.63
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-14 19:56:42] Параметры для логирования:
+Array
+(
+    [file] => /home/c/cl82604/public_html/register.php
+    [line] => 141
+    [user_id] => 1
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.148.36
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-14 20:24:43] Параметры для логирования:
+Array
+(
+    [file] => /home/c/cl82604/public_html/register.php
+    [line] => 141
+    [user_id] => 2
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.148.36
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-21 23:47:10] Параметры для логирования:
+Array
+(
+    [file] => /home/c/cl82604/public_html/register.php
+    [line] => 141
+    [user_id] => 3
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.145.224
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0
+)
+
+
+[2025-06-30 15:30:08] Параметры для логирования:
+Array
+(
+    [file] => /home/c/cd54462/public_html/register.php
+    [line] => 141
+    [user_id] => 1
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.145.224
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0
+)
+
+
+[2025-06-30 19:41:38] Параметры для логирования:
+Array
+(
+    [file] => /home/c/cd54462/public_html/register.php
+    [line] => 141
+    [user_id] => 2
+    [success] => 1
+    [failure_reason] => 
+    [device_type] => desktop
+    [ip] => 94.181.145.224
+    [user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0
+)
+
+

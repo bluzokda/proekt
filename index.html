@@ -1,0 +1,2987 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Финансовый тренажёр</title>
+    <link rel="icon" href="/image/avatar.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-purple: #b400ff;
+            --neon-pink: #ff00c3;
+            --neon-green: #00ff9d;
+            --neon-indigo: #6a00ff;
+            --dark-bg: #0a0a1a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .neon-card {
+            background: rgba(10, 10, 26, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .neon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+        }
+
+        .neon-text {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 6s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .btn-neon {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-neon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+        }
+
+        .btn-neon:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0)
+            );
+            transform: rotate(30deg);
+            transition: all 0.5s ease;
+        }
+
+        .btn-neon:hover:after {
+            left: 100%;
+        }
+
+        .neon-pulse {
+            animation: neon-pulse 2s infinite;
+        }
+
+        @keyframes neon-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 242, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0); }
+        }
+
+        .tab-active {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+        }
+
+        .tab-inactive {
+            background: rgba(10, 10, 26, 0.7);
+            color: var(--neon-blue);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tab-inactive:hover {
+            background: rgba(20, 20, 40, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+        }
+
+        .input-neon {
+            background: rgba(10, 10, 26, 0.7);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-neon:focus {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 0 3px rgba(0, 242, 255, 0.2);
+            outline: none;
+        }
+
+        .progress-gradient {
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple), var(--neon-blue));
+        }
+
+        .neon-border {
+            position: relative;
+        }
+
+        .neon-border:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.7);
+        }
+
+        .neon-bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,242,255,0.1) 0%, rgba(180,0,255,0.05) 70%, rgba(255,0,195,0) 100%);
+            animation: float linear infinite;
+            filter: blur(5px);
+            will-change: transform;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .theory-card {
+            background: rgba(10, 10, 26, 0.7);
+            border-left: 4px solid var(--neon-blue);
+            transition: all 0.3s ease;
+        }
+
+        .theory-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+        }
+
+        .formula {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 242, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: var(--neon-blue);
+            font-weight: bold;
+            border-left: 3px solid var(--neon-blue);
+        }
+
+        .neon-loader {
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--neon-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .level-tab {
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .level-tab.active {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+        }
+
+        .level-tab.inactive {
+            background: rgba(20, 20, 40, 0.5);
+            color: var(--neon-blue);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        .level-tab.inactive:hover {
+            background: rgba(30, 30, 60, 0.7);
+        }
+        
+        .result-container {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            margin-top: 12px;
+            font-size: 0.925rem;
+            line-height: 1.4;
+            box-sizing: border-box;
+            background-color: rgba(10, 10, 26, 0.85);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 242, 255, 0.1);
+            overflow: hidden;
+        }
+
+        /* Для правильных ответов */
+        .result-container.bg-green-900\/10 {
+            background: rgba(0, 159, 80, 0.15);
+            border-color: rgba(0, 255, 128, 0.2);
+        }
+
+        /* Для неправильных ответов */
+        .result-container.bg-red-900\/10 {
+            background: rgba(159, 0, 50, 0.15);
+            border-color: rgba(255, 0, 80, 0.2);
+        }
+
+        /* Для предупреждений */
+        .result-container.bg-yellow-900\/20 {
+            background: rgba(159, 100, 0, 0.2);
+            border-color: rgba(255, 200, 0, 0.3);
+        }
+
+        .result-container details {
+            transition: all 0.2s ease;
+            margin-top: 8px;
+        }
+
+        .result-container summary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            color: var(--neon-blue);
+            font-weight: 500;
+            outline: none;
+            padding: 4px 0;
+        }
+
+        .result-container summary:hover {
+            color: white;
+        }
+
+        .result-container details[open] summary {
+            margin-bottom: 6px;
+        }
+
+        .result-container .font-mono {
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Для математических формул */
+        .result-container katex {
+            font-size: 1.1em;
+        }
+        
+        /* Для кнопки Меню */
+        .menu-panel {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Используем -100% вместо фиксированного значения */
+    width: 256px;
+    height: 100%;
+    background-color: var(--dark-bg);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 50;
+    padding: 1rem;
+    transition: right 0.3s ease-in-out;
+    visibility: hidden; /* Скрываем элемент до активации */
+}
+
+.menu-panel.open {
+    right: 0;
+    visibility: visible; /* Показываем при открытии */
+}
+
+        .menu-panel h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .menu-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-panel li {
+            margin-bottom: 1rem;
+        }
+
+        .menu-panel a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: background 0.3s;
+        }
+
+        .menu-panel a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 40;
+        }
+        
+        /* Стили для модального окна авторизации */
+        .auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .auth-container {
+            background: rgba(10, 10, 26, 0.95);
+            border-radius: 16px;
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .auth-overlay.active .auth-container {
+            transform: translateY(0);
+        }
+        
+        .auth-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 12px 0;
+            background: rgba(20, 20, 40, 0.5);
+            border: none;
+            color: var(--neon-blue);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-tab.active {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .auth-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .auth-form h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .auth-input-group {
+            margin-bottom: 20px;
+        }
+        
+        .auth-input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--neon-blue);
+        }
+        
+        .auth-input {
+            width: 100%;
+            padding: 14px;
+            background: rgba(20, 20, 40, 0.5);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-input:focus {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 0 3px rgba(0, 242, 255, 0.2);
+            outline: none;
+        }
+        
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+        }
+        
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .auth-footer a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .auth-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: rgba(20, 20, 40, 0.5);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-close:hover {
+            background: var(--neon-blue);
+            color: var(--dark-bg);
+        }
+        
+        .auth-error {
+            background: rgba(255, 50, 50, 0.2);
+            border: 1px solid rgba(255, 100, 100, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+            font-size: 14px;
+            display: none;
+        }
+/* Пользовательская панель */
+.user-panel {
+    position: relative;
+    display: inline-block;
+}
+
+.user-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(10, 10, 26, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+    z-index: 50;
+}
+/* Стили для tooltip */
+.tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(10, 10, 26, 0.95);
+  padding: 16px; /* Увеличение внутренних отступов */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  min-width: 300px; /* Минимальная ширина */
+  max-width: 400px; /* Максимальная ширина для больших экранов */
+  word-break: break-word; /* Автоматический перенос строк */
+  font-size: 14px; /* Размер шрифта */
+}
+
+/* Стили для заголовков и текста */
+.tooltip label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--neon-blue); /* Цвет заголовков */
+}
+
+.tooltip span {
+  display: block;
+  margin-bottom: 8px;
+  color: white; /* Цвет текста */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .tooltip {
+    min-width: 250px; /* Уменьшаем минимальную ширину для мобильных */
+    max-width: 100%; /* Занимает всю ширину экрана */
+  }
+}
+
+.user-panel:hover .tooltip,
+.tooltip:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Общие исправления для мобильных */
+@media (max-width: 768px) {
+  /* Адаптивные карточки */
+  .neon-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+  
+  /* Адаптивные кнопки */
+  .btn-neon, .tab-btn {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  /* Исправление табов */
+  .tab-btn {
+    margin-bottom: 8px;
+    width: 100%;
+  }
+  
+  /* Адаптивная сетка */
+  .flex {
+    flex-wrap: wrap;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  /* Заголовки */
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Контент карточек */
+  .theory-card {
+    padding: 16px;
+  }
+  
+  /* Формы ввода */
+  .input-neon {
+    padding: 12px;
+  }
+  
+  /* Панель пользователя */
+  .user-panel {
+    top: 16px;
+    right: 16px;
+  }
+  
+  .tooltip {
+    min-width: 280px;
+    max-width: 90vw;
+    left: 0;
+    right: auto;
+  }
+  
+  /* Исправление меню */
+  .menu-panel {
+    width: 80vw;
+  }
+  
+  /* Адаптация табов уровней */
+  .level-tab {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  /* Фикс для таблицы ЕГЭ */
+  .flex.mb-4 {
+    flex-direction: column;
+  }
+  
+  .flex.mb-4 button {
+    width: 100%;
+    border-radius: 8px !important;
+    margin-bottom: 8px;
+  }
+  
+  /* Адаптация текста в вопросах */
+  #deposit-question,
+  #annuity-question,
+  #diff-question,
+  #invest-question,
+  #ege-question,
+  #olympiad-question {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+/* Экстренные исправления для очень маленьких экранов */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .btn-neon, .tab-btn {
+    padding: 10px 12px;
+  }
+  
+  header {
+    padding: 8px 0;
+  }
+  
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  /* Фикс для дифференцированных платежей */
+  #diff-answer {
+    font-size: 16px;
+  }
+}
+
+
+
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+</head>
+<body class="antialiased">
+    <!-- Animated background bubbles -->
+    <div id="bubbles-container" class="fixed inset-0 overflow-hidden -z-10"></div>
+    
+    <!-- Auth Modal -->
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-container neon-border">
+            <button class="auth-close" onclick="closeAuthModal()">×</button>
+            
+            <div class="text-center mb-6">
+                <h1 class="auth-title">ФИНАНСОВЫЙ ТРЕНАЖЁР</h1>
+                <p class="text-white/80">Повышайте свою финансовую грамотность</p>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Вход</button>
+                <button class="auth-tab" data-tab="register">Регистрация</button>
+                <button class="auth-tab" data-tab="forgot">Восстановить</button>
+            </div>
+            
+            <div id="auth-error" class="auth-error"></div>
+            
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active">
+                <div class="auth-input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="auth-input" placeholder="Ваш email" required>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label for="login-password">Пароль</label>
+                    <input type="password" id="login-password" class="auth-input" placeholder="Ваш пароль" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Войти</button>
+                
+                <div class="auth-footer">
+                    <a href="#" onclick="switchAuthMode('forgot')">Забыли пароль?</a>
+                </div>
+            </form>
+            
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form">
+                <div class="auth-input-group">
+                    <label for="register-name">Ваше имя:</label>
+                    <input type="text" id="register-name" name="name" class="auth-input" placeholder="Ваше имя" required>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" class="auth-input" placeholder="Ваш email" required>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label for="register-password">Пароль</label>
+                    <input type="password" id="register-password" class="auth-input" placeholder="Придумайте пароль" required>
+                </div>
+                
+                <div class="auth-input-group">
+                    <label for="register-confirm">Подтвердите пароль</label>
+                    <input type="password" id="register-confirm" class="auth-input" placeholder="Повторите пароль" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Зарегистрироваться</button>
+            </form>
+            
+            <!-- Forgot Password Form -->
+            <form id="forgot-form" class="auth-form">
+                <div class="auth-input-group">
+                    <label for="forgot-email">Email</label>
+                    <input type="email" id="forgot-email" class="auth-input" placeholder="Ваш email" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Восстановить пароль</button>
+                
+                <div class="auth-footer">
+                    <a href="#" onclick="switchAuthMode('login')">Вернуться к входу</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Toast notification -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-10 opacity-0 transition-all duration-300"></div>
+    
+    <!-- Sidebar Menu -->
+    <aside id="sidebar-menu" class="menu-panel">
+        <span id="close-menu" class="menu-close">&times;</span>
+        <h2 class="text-white">Меню</h2>
+        <ul>
+            <li><a href="profile.php">Профиль</a></li>
+        <li><a href="stats.php">Статистика</a></li>
+        <li><a href="leaderboard.php">Таблица лидеров</a></li>
+        <li><a href="#" onclick="openAuthModal()">Авторизация</a></li>
+        <li><a href="table-tasks.php">Табличный формат</a>
+        </ul>
+    </aside>
+
+    <!-- Overlay when menu is open -->
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <!-- Header -->
+<header class="relative overflow-hidden py-12">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-purple-900/30 opacity-50"></div>
+    
+    <!-- Панель пользователя -->
+<div class="user-panel absolute top-6 right-6 z-20" id="user-panel">
+    <button 
+        id="user-badge"
+        class="user-badge cursor-pointer p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
+        title="Профиль пользователя"
+        aria-label="Профиль пользователя"
+    >
+        <!-- SVG иконка пользователя -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-neon-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+    </button>
+
+    <!-- Tooltip -->
+    <div id="tooltip-content" class="tooltip absolute right-0 mt-2 w-64 bg-black/80 backdrop-blur-md border border-gray-700 rounded-lg shadow-xl p-4 z-30 transition-opacity duration-200 ease-in-out">
+      <div class="animate-pulse">
+        <div class="h-4 bg-gray-700 rounded w-3/4 mb-2"></div>
+        <div class="h-4 bg-gray-700 rounded w-full mb-2"></div>
+        <div class="h-4 bg-gray-700 rounded w-5/6 mb-2"></div>
+        <div class="h-4 bg-gray-700 rounded w-4/6"></div>
+      </div>
+    </div>
+  </div>
+
+            <!-- Tooltip с информацией -->
+            <div class="tooltip absolute right-0 mt-2 w-64 bg-black/80 backdrop-blur-md border border-gray-700 rounded-lg shadow-xl p-4 hidden group-hover:block z-30 transition-opacity duration-200 ease-in-out">
+                <div class="text-sm space-y-2">
+                    <p><strong>Имя:</strong> <?= htmlspecialchars($user['username'] ?? '—') ?></p>
+                    <p><strong>Email:</strong> <?= htmlspecialchars($user['email']) ?></p>
+                    <p><strong>ID:</strong> <?= htmlspecialchars($user['id']) ?></p>
+                    <p><strong>Дата регистрации:</strong> <?= date('d.m.Y', strtotime($user['created_at'])) ?></p>
+
+                    <?php if ($lastLogin): ?>
+                        <p><strong>Последний вход:</strong> <?= date('d.m.Y H:i', strtotime($lastLogin['login_time'])) ?><br>
+                            <span class="text-xs text-gray-400">IP: <?= htmlspecialchars($lastLogin['ip']) ?></span>
+                        </p>
+                    <?php else: ?>
+                        <p><strong>Последний вход:</strong> Неизвестен</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+
+    <!-- Основная часть header -->
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 neon-text animate__animated animate__fadeInDown">
+                Финансовый тренажёр
+            </h1>
+            <p class="text-xl text-white/80 animate__animated animate__fadeIn animate__delay-1s">
+                Освойте проценты, вклады и кредиты на практике
+            </p>
+            <div class="mt-8 animate__animated animate__fadeIn animate__delay-2s">
+                <div class="inline-block p-1 rounded-full bg-white/10 backdrop-blur-sm">
+                    <div class="flex items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        Подготовка к ЕГЭ
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main content -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <div class="neon-card neon-border rounded-2xl overflow-hidden mb-8">
+            <div class="p-6 md:p-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold glow-text">ФИНАНСОВЫЙ ТРЕНАЖЁР</h2>
+                    <button onclick="toggleMenu()" class="btn-neon px-4 py-2 rounded-lg flex items-center">
+                        Меню
+                    </button>
+                </div>
+                
+                <!-- Level tabs -->
+                <div class="flex flex-col sm:flex-row gap-2 mb-6">
+  <button class="level-tab active" id="basic-tab" onclick="changeLevel('basic')">
+    Базовый уровень
+  </button>
+  <button class="level-tab inactive" id="advanced-tab" onclick="changeLevel('advanced')">
+    Повышенный уровень
+  </button>
+</div>
+                
+                <!-- Tabs -->
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <button class="tab-btn tab-active px-5 py-3 rounded-full font-medium flex items-center" onclick="openTab(event, 'deposit')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Вклады
+                    </button>
+                    <button class="tab-btn tab-inactive px-5 py-3 rounded-full font-medium flex items-center" onclick="openTab(event, 'annuity')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                        </svg>
+                        Аннуитетный кредит
+                    </button>
+                    <button class="tab-btn tab-inactive px-5 py-3 rounded-full font-medium flex items-center" onclick="openTab(event, 'diff')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        Дифференцированный кредит
+                    </button>
+                    <button class="tab-btn tab-inactive px-5 py-3 rounded-full font-medium flex items-center" onclick="openTab(event, 'invest')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        Инвестиции
+                    </button>
+                    <button class="tab-btn tab-inactive px-5 py-3 rounded-full font-medium flex items-center" onclick="openTab(event, 'ege')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        ЕГЭ
+                    </button>
+
+                    <button class="tab-btn tab-inactive px-5 py-3 rounded-full font-medium flex items-center" onclick="openTab(event, 'theory')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        Теория
+                    </button>
+                    <!-- НОВЫЙ БЛОК: КОЛЛЕКЦИЯ ОЛИМПИАД -->
+                    <button class="tab-btn tab-inactive px-5 py-3 rounded-full font-medium flex items-center" onclick="openTab(event, 'olympiad')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        Коллекция олимпиад
+                    </button>
+                </div>
+                            
+                <!-- Вклады -->
+                <div id="deposit" class="tab-content">
+                    <div class="bg-blue-900/20 rounded-xl p-6 mb-6 neon-border">
+                        <div class="flex items-start">
+                            <div class="bg-blue-900/30 p-3 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-neon-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-neon-blue mb-3">ЗАДАЧА НА ВКЛАДЫ</h3>
+                                <p id="deposit-question" class="mb-4 text-white/80"></p>
+                                
+                                <div class="flex flex-col md:flex-row gap-4 items-start md:items-end">
+                                    <div class="w-full md:w-auto flex-1">
+                                        <label class="block text-sm font-medium text-neon-blue mb-1">Ваш ответ (руб.):</label>
+                                        <input type="number" id="deposit-answer" placeholder="Введите сумму" 
+                                            class="w-full px-4 py-3 rounded-lg input-neon focus:outline-none focus:ring-2 focus:ring-neon-blue">
+                                        <div id="deposit-alert" class="hidden text-sm mt-1 text-neon-pink"></div>
+                                    </div>
+                                    <button onclick="checkDepositAnswer()" 
+                                        class="btn-neon px-6 py-3 rounded-lg neon-pulse">
+                                        Проверить ответ
+                                    </button>
+                                </div>
+                                
+                                <div id="deposit-result" class="mt-4 p-4 rounded-lg hidden neon-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <button onclick="generateDepositTask()" 
+                            class="btn-neon px-6 py-3 rounded-lg flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Новая задача
+                        </button>
+                        
+                        <div class="text-sm text-white/60 bg-black/30 px-4 py-2 rounded-full neon-border">
+                            <span class="font-medium text-neon-blue" id="deposit-score">0</span> из <span class="font-medium" id="deposit-total">0</span> верно
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Аннуитетный кредит -->
+                <div id="annuity" class="tab-content hidden">
+                    <div class="bg-purple-900/20 rounded-xl p-6 mb-6 neon-border">
+                        <div class="flex items-start">
+                            <div class="bg-purple-900/30 p-3 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-neon-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-neon-purple mb-3">ЗАДАЧА НА АННУИТЕТНЫЙ КРЕДИТ</h3>
+                                <p id="annuity-question" class="mb-4 text-white/80"></p>
+                                
+                                <div class="flex flex-col md:flex-row gap-4 items-start md:items-end">
+                                    <div class="w-full md:w-auto flex-1">
+                                        <label class="block text-sm font-medium text-neon-purple mb-1">Ваш ответ (руб.):</label>
+                                        <input type="number" id="annuity-answer" placeholder="Введите сумму" 
+                                            class="w-full px-4 py-3 rounded-lg input-neon focus:outline-none focus:ring-2 focus:ring-neon-purple">
+                                        <div id="annuity-alert" class="hidden text-sm mt-1 text-neon-pink"></div>
+                                    </div>
+                                    <button onclick="checkAnnuityAnswer()" 
+                                        class="btn-neon px-6 py-3 rounded-lg neon-pulse">
+                                        Проверить ответ
+                                    </button>
+                                </div>
+                                
+                                <div id="annuity-result" class="mt-4 p-4 rounded-lg hidden neon-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <button onclick="generateAnnuityTask()" 
+                            class="btn-neon px-6 py-3 rounded-lg flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Новая задача
+                        </button>
+                        
+                        <div class="text-sm text-white/60 bg-black/30 px-4 py-2 rounded-full neon-border">
+                            <span class="font-medium text-neon-purple" id="annuity-score">0</span> из <span class="font-medium" id="annuity-total">0</span> верно
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Дифференцированный кредит -->
+                <div id="diff" class="tab-content hidden">
+                    <div class="bg-indigo-900/20 rounded-xl p-6 mb-6 neon-border">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-900/30 p-3 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-neon-indigo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-neon-indigo mb-3">ЗАДАЧА НА ДИФФЕРЕНЦИРОВАННЫЙ КРЕДИТ</h3>
+                                <p id="diff-question" class="mb-4 text-white/80"></p>
+                                
+                                <div class="flex flex-col md:flex-row gap-4 items-start md:items-end">
+                                    <div class="w-full md:w-auto flex-1">
+                                        <label class="block text-sm font-medium text-neon-indigo mb-1">Ваш ответ (руб.):</label>
+                                        <input type="text" id="diff-answer" placeholder="Введите два числа через пробел" 
+                                            class="w-full px-4 py-3 rounded-lg input-neon focus:outline-none focus:ring-2 focus:ring-neon-indigo">
+                                        <div id="diff-alert" class="hidden text-sm mt-1 text-neon-pink"></div>
+                                    </div>
+                                    <button onclick="checkDiffAnswer()" 
+                                        class="btn-neon px-6 py-3 rounded-lg neon-pulse">
+                                        Проверить ответ
+                                    </button>
+                                </div>
+                                
+                                <div id="diff-result" class="mt-4 p-4 rounded-lg hidden neon-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <button onclick="generateDiffTask()" 
+                            class="btn-neon px-6 py-3 rounded-lg flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Новая задача
+                        </button>
+                        
+                        <div class="text-sm text-white/60 bg-black/30 px-4 py-2 rounded-full neon-border">
+                            <span class="font-medium text-neon-indigo" id="diff-score">0</span> из <span class="font-medium" id="diff-total">0</span> верно
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Инвестиции -->
+                <div id="invest" class="tab-content hidden">
+                    <div class="bg-green-900/20 rounded-xl p-6 mb-6 neon-border">
+                        <div class="flex items-start">
+                            <div class="bg-green-900/30 p-3 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-neon-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-neon-green mb-3">ЗАДАЧА НА ИНВЕСТИЦИИ</h3>
+                                <p id="invest-question" class="mb-4 text-white/80"></p>
+                                
+                                <div class="flex flex-col md:flex-row gap-4 items-start md:items-end">
+                                    <div class="w-full md:w-auto flex-1">
+                                        <label class="block text-sm font-medium text-neon-green mb-1">Ваш ответ (руб.):</label>
+                                        <input type="number" id="invest-answer" placeholder="Введите сумму" 
+                                            class="w-full px-4 py-3 rounded-lg input-neon focus:outline-none focus:ring-2 focus:ring-neon-green">
+                                        <div id="invest-alert" class="hidden text-sm mt-1 text-neon-pink"></div>
+                                    </div>
+                                    <button onclick="checkInvestAnswer()" 
+                                        class="btn-neon px-6 py-3 rounded-lg neon-pulse">
+                                        Проверить ответ
+                                    </button>
+                                </div>
+                                
+                                <div id="invest-result" class="mt-4 p-4 rounded-lg hidden neon-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <button onclick="generateInvestTask()" 
+                            class="btn-neon px-6 py-3 rounded-lg flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Новая задача
+                        </button>
+                        
+                        <div class="text-sm text-white/60 bg-black/30 px-4 py-2 rounded-full neon-border">
+                            <span class="font-medium text-neon-green" id="invest-score">0</span> из <span class="font-medium" id="invest-total">0</span> верно
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+                <!-- ЕГЭ -->
+                <div id="ege" class="tab-content hidden">
+                    <div class="bg-red-900/20 rounded-xl p-6 mb-6 neon-border">
+                        <div class="flex items-start">
+                            <div class="bg-red-900/30 p-3 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-red-500 mb-3">ЗАДАЧА ДЛЯ ПОДГОТОВКИ К ЕГЭ</h3>
+                                <div class="flex mb-4">
+                                    <button onclick="setEgeLevel('basic')" id="ege-basic-btn" class="px-4 py-2 rounded-l-lg font-medium bg-red-900/50 text-white border border-red-500">
+                                        Базовый уровень (№15)
+                                    </button>
+                                    <button onclick="setEgeLevel('advanced')" id="ege-advanced-btn" class="px-4 py-2 rounded-r-lg font-medium bg-gray-800/50 text-white/70 border border-gray-700">
+                                        Повышенный уровень (№17)
+                                    </button>
+                                </div>
+                                <p id="ege-question" class="mb-4 text-white/80"></p>
+                                
+                                <div class="flex flex-col md:flex-row gap-4 items-start md:items-end">
+                                    <div class="w-full md:w-auto flex-1">
+                                        <label class="block text-sm font-medium text-red-500 mb-1">Ваш ответ:</label>
+                                        <input type="text" id="ege-answer" placeholder="Введите ответ" 
+                                            class="w-full px-4 py-3 rounded-lg input-neon focus:outline-none focus:ring-2 focus:ring-red-500">
+                                        <div id="ege-alert" class="hidden text-sm mt-1 text-neon-pink"></div>
+                                    </div>
+                                    <button onclick="checkEgeAnswer()" 
+                                        class="btn-neon px-6 py-3 rounded-lg neon-pulse">
+                                        Проверить ответ
+                                    </button>
+                                </div>
+                                
+                                <div id="ege-result" class="result-container hidden neon-border"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <div class="flex justify-between items-center">
+                        <button onclick="generateEgeTask()" id="ege-new-task-btn"
+                            class="btn-neon px-6 py-3 rounded-lg flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Новая задача
+                        </button>
+                        
+                        <div class="text-sm text-white/60 bg-black/30 px-4 py-2 rounded-full neon-border">
+                            <span class="font-medium text-red-500" id="ege-score">0</span> баллов | 
+                            <span class="font-medium text-red-500" id="ege-tasks">0</span>/10 задач
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Теория -->
+                <div id="theory" class="tab-content hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="theory-card rounded-lg p-6 neon-border">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-900/30 p-2 rounded-full mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neon-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-neon-blue">ПРОСТЫЕ ПРОЦЕНТЫ</h3>
+                            </div>
+                            <p class="mb-3 text-white/80"><span class="font-medium">Формула:</span> <span class="formula">S = P × (1 + r × t)</span></p>
+                            <p class="text-white/80 mb-4">Где: S - итоговая сумма, P - начальная сумма, r - процентная ставка (в десятичной форме), t - время в годах.</p>
+                            <div class="bg-blue-900/20 p-4 rounded-lg neon-border">
+                                <p class="font-medium text-neon-blue mb-2">Пример:</p>
+                                <p class="text-white/80 mb-2">Вклад 10 000 руб. под 5% годовых на 3 года без капитализации:</p>
+                                <p class="formula">10 000 × (1 + 0.05 × 3) = 11 500 руб.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theory-card rounded-lg p-6 neon-border">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-purple-900/30 p-2 rounded-full mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neon-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-neon-purple">СЛОЖНЫЕ ПРОЦЕНТЫ</h3>
+                            </div>
+                            <p class="mb-3 text-white/80"><span class="font-medium">Формула:</span> <span class="formula">S = P × (1 + r)<sup>t</sup></span></p>
+                            <p class="text-white/80 mb-4">При капитализации проценты начисляются на проценты, поэтому сумма растёт быстрее.</p>
+                            <div class="bg-purple-900/20 p-4 rounded-lg neon-border">
+                                <p class="font-medium text-neon-purple mb-2">Пример:</p>
+                                <p class="text-white/80 mb-2">Вклад 10 000 руб. под 5% годовых на 3 года с капитализацией:</p>
+                                <p class="formula">10 000 × (1 + 0.05)<sup>3</sup> ≈ 11 576,25 руб.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theory-card rounded-lg p-6 neon-border">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-900/30 p-2 rounded-full mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neon-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-neon-blue">АННУИТЕТНЫЙ ПЛАТЁЖ</h3>
+                            </div>
+                            <p class="mb-3 text-white/80"><span class="font-medium">Формула:</span> <span class="formula">Платёж = (P × r × (1 + r)<sup>n</sup>) / ((1 + r)<sup>n</sup> - 1)</span></p>
+                            <p class="text-white/80 mb-4">Где: P - сумма кредита, r - месячная ставка, n - количество месяцев.</p>
+                            <div class="bg-blue-900/20 p-4 rounded-lg neon-border">
+                                <p class="font-medium text-neon-blue mb-2">Пример:</p>
+                                <p class="text-white/80 mb-2">Кредит 100 000 руб. на 1 год под 12% годовых:</p>
+                                <p class="text-white/80 mb-2">Месячная ставка: 12%/12 = 1% = 0.01</p>
+                                <p class="formula">Платёж = (100000×0.01×(1+0.01)<sup>12</sup>)/((1+0.01)<sup>12</sup>-1) ≈ 8 885 руб.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="theory-card rounded-lg p-6 neon-border">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-pink-900/30 p-2 rounded-full mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neon-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-neon-pink">ДИФФЕРЕНЦИРОВАННЫЙ ПЛАТЁЖ</h3>
+                            </div>
+                            <p class="mb-3 text-white/80"><span class="font-medium">Формула:</span> <span class="formula">Платёж = (P / n) + (P - (P/n)×(m-1)) × r</span></p>
+                            <p class="text-white/80 mb-4">Где: n - общее число месяцев, m - текущий месяц, r - месячная ставка.</p>
+                            <div class="bg-pink-900/20 p-4 rounded-lg neon-border">
+                                <p class="font-medium text-neon-pink mb-2">Пример:</p>
+                                <p class="text-white/80 mb-2">Кредит 100 000 руб. на 1 год под 12% годовых:</p>
+                                <p class="text-white/80 mb-2">Основной платёж: 100000/12 ≈ 8 333 руб.</p>
+                                <p class="formula">Первый платёж: 8 333 + (100000 × 0.01) ≈ 9 333 руб.</p>
+                                <p class="formula">Последний платёж: 8 333 + (8 333 × 0.01) ≈ 8 416 руб.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- НОВЫЙ БЛОК: КОЛЛЕКЦИЯ ОЛИМПИАД -->
+                <div id="olympiad" class="tab-content hidden">
+                    <div class="bg-indigo-900/20 rounded-xl p-6 mb-6 neon-border">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-900/30 p-3 rounded-lg mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-neon-indigo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-neon-indigo mb-3">ЗАДАЧА ИЗ ОЛИМПИАДЫ</h3>
+                                <p id="olympiad-question" class="mb-4 text-white/80"></p>
+                                <p id="olympiad-university" class="text-sm text-neon-blue mb-4"></p>
+                                
+                                <div class="flex flex-col md:flex-row gap-4 items-start md:items-end">
+                                    <div class="w-full md:w-auto flex-1">
+                                        <label class="block text-sm font-medium text-neon-indigo mb-1">Ваш ответ:</label>
+                                        <input type="text" id="olympiad-answer" placeholder="Введите ответ" 
+                                            class="w-full px-4 py-3 rounded-lg input-neon focus:outline-none focus:ring-2 focus:ring-neon-indigo">
+                                        <div id="olympiad-alert" class="hidden text-sm mt-1 text-neon-pink"></div>
+                                    </div>
+                                    <button onclick="checkOlympiadAnswer()" 
+                                        class="btn-neon px-6 py-3 rounded-lg neon-pulse">
+                                        Проверить ответ
+                                    </button>
+                                </div>
+                                
+                                <div id="olympiad-result" class="result-container hidden neon-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <button onclick="generateOlympiadTask()" 
+                            class="btn-neon px-6 py-3 rounded-lg flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Новая задача
+                        </button>
+                        
+                        <div class="text-sm text-white/60 bg-black/30 px-4 py-2 rounded-full neon-border">
+                            <span class="font-medium text-neon-indigo" id="olympiad-score">0</span> из <span class="font-medium" id="olympiad-total">0</span> верно
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Прогресс -->
+                <div class="mt-12">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-lg font-semibold text-white/80">ВАШ ПРОГРЕСС ОБУЧЕНИЯ</h3>
+                        <span class="text-sm font-medium text-neon-blue" id="total-score">0%</span>
+                    </div>
+                    <div class="w-full bg-black/30 rounded-full h-3 overflow-hidden">
+                        <div id="progress-bar" class="h-3 rounded-full progress-gradient" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between mt-1 text-xs text-white/50">
+                        <span>НАЧИНАЮЩИЙ</span>
+                        <span>ЭКСПЕРТ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="mt-16 text-center">
+            <div class="inline-block p-1 rounded-full bg-white/10 backdrop-blur-sm shadow-lg">
+                <div class="flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Финансовая грамотность — ключ к успеху!
+                </div>
+            </div>
+            <p class="mt-6 text-white/50">© 2025 Финансовый тренажёр</p>
+        </footer>
+    </div>
+
+    <script>
+        // Глобальные переменные
+        let currentDepositTask = {};
+        let currentAnnuityTask = {};
+        let currentDiffTask = {};
+        let currentInvestTask = {};
+        let currentEgeTask = {};
+        let score = 0;
+        let totalTasks = 0;
+        let answeredDeposit = false;
+        let answeredAnnuity = false;
+        let answeredDiff = false;
+        let answeredInvest = false;
+        let answeredEge = false;
+        let currentLevel = 'basic'; // 'basic' или 'advanced'
+        let egeTasksCompleted = 0;
+        let egeTotalScore = 0;
+
+        // База олимпиадных задач
+        const olympiadTasks = [
+            // МГУ
+            {
+                university: "МГУ им. М.В. Ломоносова",
+                question: "Инвестор купил акцию по цене 100 руб. в начале года. В конце года он получил дивиденд 5 руб. и продал акцию за 115 руб. Какова общая доходность инвестиции в процентах?",
+                answer: "20",
+                solution: "Доходность = ((Цена продажи + Дивиденды - Цена покупки) / Цена покупки) × 100% = ((115 + 5 - 100) / 100) × 100% = 20%"
+            },
+            {
+                university: "МГУ им. М.В. Ломоносова",
+                question: "Банк предлагает вклад под 8% годовых с ежеквартальной капитализацией. Какова эффективная годовая ставка?",
+                answer: "8.24",
+                solution: "Эффективная ставка = (1 + r/n)^n - 1 = (1 + 0.08/4)^4 - 1 ≈ 0.0824 или 8.24%"
+            },
+            
+            // ВШЭ
+            {
+                university: "НИУ ВШЭ",
+                question: "Предприятие выпустило облигации номиналом 1000 руб. со сроком погашения 5 лет и купоном 7% годовых. Какова цена облигации, если рыночная ставка составляет 5%?",
+                answer: "1086",
+                solution: "Цена = Σ(Купон/(1+r)^t) + Номинал/(1+r)^n = 70/1.05 + 70/1.05² + 70/1.05³ + 70/1.05⁴ + 70/1.05⁵ + 1000/1.05⁵ ≈ 1086 руб."
+            },
+            {
+                university: "НИУ ВШЭ",
+                question: "Индекс РТС вырос за год на 15%, а курс доллара упал с 75 до 70 руб. Какова доходность в рублях для иностранного инвестора?",
+                answer: "9.5",
+                solution: "Доходность в рублях = (1 + доходность актива) × (1 + изменение курса) - 1 = 1.15 × (70/75) - 1 ≈ 1.15 × 0.9333 - 1 ≈ 0.095 или 9.5%"
+            },
+            
+            // РЭУ им. Плеханова
+            {
+                university: "РЭУ им. Г.В. Плеханова",
+                question: "Компания рассматривает проект с первоначальными инвестициями 500 тыс. руб. Ожидаемые денежные потоки: 1 год - 100 тыс., 2 год - 200 тыс., 3 год - 300 тыс. руб. При ставке дисконтирования 10%, чему равен NPV?",
+                answer: "23.14",
+                solution: "NPV = -500 + 100/1.1 + 200/1.1² + 300/1.1³ = -500 + 90.91 + 165.29 + 225.39 ≈ 23.14 тыс. руб."
+            },
+            {
+                university: "РЭУ им. Г.В. Плеханова",
+                question: "Портфель состоит из двух активов: 60% акций с доходностью 15% и 40% облигаций с доходностью 5%. Какова ожидаемая доходность портфеля?",
+                answer: "11",
+                solution: "Доходность портфеля = Σ(Доля актива × Доходность) = 0.6×15% + 0.4×5% = 9% + 2% = 11%"
+            },
+            
+            // МГИМО
+            {
+                university: "МГИМО",
+                question: "Страховая компания предлагает аннуитет: выплата 100 тыс. руб. ежегодно в течение 20 лет. Сколько стоит такой аннуитет при ставке дисконтирования 6%?",
+                answer: "1147",
+                solution: "Стоимость аннуитета = Платеж × [1 - (1+r)^-n]/r = 100 × [1 - 1.06^-20]/0.06 ≈ 100 × 11.47 ≈ 1147 тыс. руб."
+            },
+            
+            // Финансовый университет
+            {
+                university: "Финансовый университет",
+                question: "Банк выдал кредит 1 млн руб. под 12% годовых на 5 лет с аннуитетными платежами. Какова сумма переплаты?",
+                answer: "324",
+                solution: "Ежемесячный платеж: П = S×r×(1+r)^n/[(1+r)^n-1] = 1000000×0.01×(1.01)^60/[(1.01)^60-1] ≈ 22244.45 руб. Сумма выплат = 22244.45×60 ≈ 1334.7 тыс. руб. Переплата = 1334.7 - 1000 = 334.7 тыс. руб."
+            }
+        ];
+
+        // Функции для авторизации
+        function openAuthModal() {
+            document.getElementById('auth-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAuthModal() {
+            document.getElementById('auth-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function switchAuthMode(mode) {
+            // Скрыть все формы
+            document.querySelectorAll('.auth-form').forEach(form => {
+                form.classList.remove('active');
+            });
+            
+            // Показать нужную форму
+            if (mode === 'login') {
+                document.getElementById('login-form').classList.add('active');
+            } else if (mode === 'register') {
+                document.getElementById('register-form').classList.add('active');
+            } else if (mode === 'forgot') {
+                document.getElementById('forgot-form').classList.add('active');
+            }
+            
+            // Обновить активную вкладку
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            if (mode === 'login') {
+                document.querySelector('.auth-tab[data-tab="login"]').classList.add('active');
+            } else if (mode === 'register') {
+                document.querySelector('.auth-tab[data-tab="register"]').classList.add('active');
+            } else if (mode === 'forgot') {
+                document.querySelector('.auth-tab[data-tab="forgot"]').classList.add('active');
+            }
+            
+            // Скрыть сообщение об ошибке
+            document.getElementById('auth-error').style.display = 'none';
+        }
+
+        // Создание анимированного фона
+        function createBubbles() {
+            const container = document.getElementById('bubbles-container');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            const colors = [
+                'rgba(0, 242, 255, 0.1)',
+                'rgba(180, 0, 255, 0.1)',
+                'rgba(255, 0, 195, 0.1)'
+            ];
+            
+            for (let i = 0; i < 20; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('neon-bubble');
+                
+                const size = Math.random() * 200 + 50;
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                const duration = Math.random() * 30 + 20;
+                const delay = Math.random() * -20;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 500 + Math.random() * 500;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                bubble.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${posX}px;
+                    top: ${posY}px;
+                    background: ${color};
+                    animation-duration: ${duration}s;
+                    animation-delay: ${delay}s;
+                    --tx: ${tx}px;
+                    --ty: ${ty}px;
+                `;
+                
+                container.appendChild(bubble);
+            }
+        }
+
+        // Управление табами
+        function openTab(event, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.add('hidden');
+                tabContents[i].classList.remove('active');
+            }
+            
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('tab-active');
+                tabButtons[i].classList.add('tab-inactive');
+            }
+            
+            document.getElementById(tabName).classList.remove('hidden');
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.remove('tab-inactive');
+            event.currentTarget.classList.add('tab-active');
+            
+            // Генерация задач при переключении вкладок
+            if (tabName === 'deposit') generateDepositTask();
+            if (tabName === 'annuity') generateAnnuityTask();
+            if (tabName === 'diff') generateDiffTask();
+            if (tabName === 'invest') generateInvestTask();
+            if (tabName === 'ege') generateEgeTask();
+        }
+
+        // Переключение уровня сложности
+        function changeLevel(level) {
+            currentLevel = level;
+            
+            // Обновляем стили кнопок
+            document.getElementById('basic-tab').className = level === 'basic' ? 'level-tab active' : 'level-tab inactive';
+            document.getElementById('advanced-tab').className = level === 'advanced' ? 'level-tab active' : 'level-tab inactive';
+            
+            // Перегенерируем текущую задачу
+            const activeTab = document.querySelector('.tab-content.active');
+            if (activeTab) {
+                const tabId = activeTab.id;
+                if (tabId === 'deposit') generateDepositTask();
+                if (tabId === 'annuity') generateAnnuityTask();
+                if (tabId === 'diff') generateDiffTask();
+                if (tabId === 'invest') generateInvestTask();
+                if (tabId === 'ege') generateEgeTask();
+            }
+        }
+
+        // Установка уровня сложности для задач ЕГЭ
+        function setEgeLevel(level) {
+            currentLevel = level;
+            
+            // Обновляем стили кнопок
+            document.getElementById('ege-basic-btn').className = level === 'basic' ? 'px-4 py-2 rounded-l-lg font-medium bg-red-900/50 text-white border border-red-500' : 'px-4 py-2 rounded-l-lg font-medium bg-gray-800/50 text-white/70 border border-gray-700';
+            document.getElementById('ege-advanced-btn').className = level === 'advanced' ? 'px-4 py-2 rounded-r-lg font-medium bg-red-900/50 text-white border border-red-500' : 'px-4 py-2 rounded-r-lg font-medium bg-gray-800/50 text-white/70 border border-gray-700';
+            
+            // Сброс счетчиков при смене уровня
+            egeTasksCompleted = 0;
+            egeTotalScore = 0;
+            document.getElementById('ege-score').textContent = '0';
+            document.getElementById('ege-tasks').textContent = '0/10';
+            document.getElementById('ege-new-task-btn').disabled = false;
+            
+            // Генерируем новую задачу
+            generateEgeTask();
+        }
+
+        // Обновление прогресса
+        function updateProgress() {
+            let totalCorrect = 0;
+            let totalTasks = 0;
+            
+            ['deposit', 'annuity', 'diff', 'invest', 'ege'].forEach(type => {
+                totalCorrect += parseInt(document.getElementById(`${type}-score`).textContent);
+                totalTasks += parseInt(document.getElementById(`${type}-total`).textContent);
+            });
+            
+            const progress = totalTasks > 0 ? Math.round((totalCorrect / totalTasks) * 100) : 0;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            document.getElementById('total-score').textContent = `${progress}%`;
+        }
+
+        // Показать toast-уведомление
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 3000);
+        }
+
+        // ГЕНЕРАТОРЫ ОЛИМПИАДНЫХ ЗАДАЧ
+        function generateMguStockTask() {
+            const purchasePrice = Math.floor(Math.random() * 500 + 50); // от 50 до 550
+            const dividend = Math.floor(Math.random() * 20) + 5; // от 5 до 25
+            const sellPrice = purchasePrice + Math.floor(Math.random() * 100) + 20; // продажа выше покупки
+
+            const profit = sellPrice + dividend - purchasePrice;
+            const yieldPercent = (profit / purchasePrice * 100).toFixed(2);
+
+            return {
+                university: "МГУ им. М.В. Ломоносова",
+                question: `Инвестор купил акцию по цене ${purchasePrice} руб. в начале года. В конце года он получил дивиденд ${dividend} руб. и продал акцию за ${sellPrice} руб. Какова общая доходность инвестиции в процентах? (Ответ округлите до двух знаков после запятой)`,
+                answer: yieldPercent,
+                solution: `Доходность = ((Цена продажи + Дивиденды - Цена покупки) / Цена покупки) × 100% = ((${sellPrice} + ${dividend} - ${purchasePrice}) / ${purchasePrice}) × 100% = ${yieldPercent}%`
+            };
+        }
+
+        function generateMguDepositTask() {
+            const nominalRate = 5 + Math.floor(Math.random() * 15); // от 5 до 20%
+            const periods = ['ежегодно', 'ежеквартально', 'ежемесячно'][Math.floor(Math.random()*3)];
+            let periodsPerYear;
+            if (periods === 'ежегодно') periodsPerYear = 1;
+            else if (periods === 'ежеквартально') periodsPerYear = 4;
+            else periodsPerYear = 12;
+
+            const effectiveRate = (Math.pow(1 + nominalRate/100 / periodsPerYear, periodsPerYear) - 1) * 100;
+            const effectiveRateRounded = effectiveRate.toFixed(2);
+
+            return {
+                university: "МГУ им. М.В. Ломоносова",
+                question: `Банк предлагает вклад под ${nominalRate}% годовых с ${periods}й капитализацией. Какова эффективная годовая ставка? (Ответ округлите до двух знаков после запятой)`,
+                answer: effectiveRateRounded,
+                solution: `Эффективная ставка = (1 + r/n)^n - 1 = (1 + ${nominalRate/100}/${periodsPerYear})^{${periodsPerYear}} - 1 ≈ ${effectiveRateRounded}%`
+            };
+        }
+
+        function generateHseBondTask() {
+            const nominal = 1000;
+            const couponRate = 5 + Math.floor(Math.random() * 10); // 5-15%
+            const coupon = nominal * couponRate / 100;
+            const marketRate = couponRate - 3 + Math.floor(Math.random() * 6); // может быть выше или ниже купонной
+            const years = 5;
+
+            // Расчет цены облигации
+            let price = 0;
+            for (let i = 1; i <= years; i++) {
+                price += coupon / Math.pow(1 + marketRate/100, i);
+            }
+            price += nominal / Math.pow(1 + marketRate/100, years);
+            const priceRounded = price.toFixed(2);
+
+            return {
+                university: "НИУ ВШЭ",
+                question: `Предприятие выпустило облигации номиналом ${nominal} руб. со сроком погашения ${years} лет и купоном ${couponRate}% годовых. Какова цена облигации, если рыночная ставка составляет ${marketRate}%? (Ответ округлите до двух знаков после запятой)`,
+                answer: priceRounded,
+                solution: `Цена = Σ(Купон/(1+r)^t) + Номинал/(1+r)^n = ${coupon}/(1+${marketRate/100}) + ${coupon}/(1+${marketRate/100})^2 + ... + ${coupon}/(1+${marketRate/100})^{${years}} + ${nominal}/(1+${marketRate/100})^{${years}} ≈ ${priceRounded} руб.`
+            };
+        }
+
+        function generateHseCurrencyTask() {
+            const assetYield = 5 + Math.floor(Math.random() * 20); // 5-25%
+            const initialRate = 70;
+            const finalRate = initialRate - 10 + Math.floor(Math.random() * 21); // от 60 до 80
+
+            const rubleYield = (1 + assetYield/100) * (initialRate / finalRate) - 1;
+            const rubleYieldPercent = (rubleYield * 100).toFixed(2);
+
+            return {
+                university: "НИУ ВШЭ",
+                question: `Индекс РТС вырос за год на ${assetYield}%, а курс доллара изменился с ${initialRate} руб. до ${finalRate} руб. Какова доходность в рублях для иностранного инвестора? (Ответ округлите до двух знаков после запятой)`,
+                answer: rubleYieldPercent,
+                solution: `Доходность в рублях = (1 + доходность актива) × (начальный курс / конечный курс) - 1 = (1 + ${assetYield/100}) × (${initialRate} / ${finalRate}) - 1 ≈ ${rubleYieldPercent}%`
+            };
+        }
+
+        function generateReuNpvTask() {
+            const investment = (500 + Math.floor(Math.random() * 500)) * 1000; // 500-1000 тыс. руб.
+            const cashFlows = [];
+            for (let i = 0; i < 3; i++) {
+                cashFlows.push((100 + Math.floor(Math.random() * 200)) * 1000); // 100-300 тыс. руб.
+            }
+            const discountRate = 10;
+
+            let npv = -investment;
+            for (let i = 0; i < 3; i++) {
+                npv += cashFlows[i] / Math.pow(1 + discountRate/100, i+1);
+            }
+            const npvRounded = npv.toFixed(2);
+
+            return {
+                university: "РЭУ им. Г.В. Плеханова",
+                question: `Компания рассматривает проект с первоначальными инвестициями ${investment.toLocaleString('ru-RU')} руб. Ожидаемые денежные потоки: 1 год - ${cashFlows[0].toLocaleString('ru-RU')} руб., 2 год - ${cashFlows[1].toLocaleString('ru-RU')} руб., 3 год - ${cashFlows[2].toLocaleString('ru-RU')} руб. При ставке дисконтирования ${discountRate}%, чему равен NPV? (Ответ округлите до двух знаков после запятой)`,
+                answer: npvRounded,
+                solution: `NPV = -${investment} + ${cashFlows[0]}/(1+0.1) + ${cashFlows[1]}/(1+0.1)^2 + ${cashFlows[2]}/(1+0.1)^3 ≈ ${npvRounded} руб.`
+            };
+        }
+
+        function generateReuPortfolioTask() {
+            const stockWeight = 30 + Math.floor(Math.random() * 50); // 30-80%
+            const stockYield = 5 + Math.floor(Math.random() * 25); // 5-30%
+            const bondYield = 2 + Math.floor(Math.random() * 10); // 2-12%
+
+            const portfolioYield = (stockWeight/100 * stockYield) + ((100 - stockWeight)/100 * bondYield);
+            const portfolioYieldRounded = portfolioYield.toFixed(2);
+
+            return {
+                university: "РЭУ им. Г.В. Плеханова",
+                question: `Портфель состоит из двух активов: ${stockWeight}% акций с доходностью ${stockYield}% и ${100 - stockWeight}% облигаций с доходностью ${bondYield}%. Какова ожидаемая доходность портфеля? (Ответ округлите до двух знаков после запятой)`,
+                answer: portfolioYieldRounded,
+                solution: `Доходность портфеля = (Доля акций × Доходность акций) + (Доля облигаций × Доходность облигаций) = (${stockWeight/100} × ${stockYield}) + (${(100 - stockWeight)/100} × ${bondYield}) ≈ ${portfolioYieldRounded}%`
+            };
+        }
+
+        function generateMgimoAnnuityTask() {
+            const payment = (50 + Math.floor(Math.random() * 100)) * 1000; // 50-150 тыс. руб.
+            const years = 10 + Math.floor(Math.random() * 20); // 10-30 лет
+            const rate = 3 + Math.floor(Math.random() * 8); // 3-10%
+
+            let pv = 0;
+            for (let i = 1; i <= years; i++) {
+                pv += payment / Math.pow(1 + rate/100, i);
+            }
+            const pvRounded = pv.toFixed(2);
+
+            return {
+                university: "МГИМО",
+                question: `Страховая компания предлагает аннуитет: выплата ${payment.toLocaleString('ru-RU')} руб. ежегодно в течение ${years} лет. Сколько стоит такой аннуитет при ставке дисконтирования ${rate}%? (Ответ округлите до двух знаков после запятой)`,
+                answer: pvRounded,
+                solution: `Стоимость аннуитета = Σ(Платеж / (1 + r)^t) = ${payment}/(1.${rate}) + ${payment}/(1.${rate})^2 + ... + ${payment}/(1.${rate})^{${years}} ≈ ${pvRounded} руб.`
+            };
+        }
+
+        function generateFinUniCreditTask() {
+            const principal = 1000000;
+            const rate = 10 + Math.floor(Math.random() * 15); // 10-25%
+            const years = 5;
+
+            const monthlyRate = rate / 1200;
+            const months = years * 12;
+            const annuityPayment = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+            const totalPayment = annuityPayment * months;
+            const overpayment = totalPayment - principal;
+            const overpaymentRounded = Math.round(overpayment);
+
+            return {
+                university: "Финансовый университет",
+                question: `Банк выдал кредит ${principal.toLocaleString('ru-RU')} руб. под ${rate}% годовых на ${years} лет с аннуитетными платежами. Какова сумма переплаты? (Ответ округлите до целых)`,
+                answer: overpaymentRounded.toString(),
+                solution: `Ежемесячный платеж = ${annuityPayment.toFixed(2)} руб. Общая сумма выплат = ${annuityPayment.toFixed(2)} × ${months} ≈ ${totalPayment.toFixed(2)} руб. Переплата = ${totalPayment.toFixed(2)} - ${principal} ≈ ${overpaymentRounded} руб.`
+            };
+        }
+
+        // Массив генераторов олимпиадных задач
+        const olympiadTaskGenerators = [
+            generateMguStockTask,
+            generateMguDepositTask,
+            generateHseBondTask,
+            generateHseCurrencyTask,
+            generateReuNpvTask,
+            generateReuPortfolioTask,
+            generateMgimoAnnuityTask,
+            generateFinUniCreditTask
+        ];
+
+        // Генерация случайной олимпиадной задачи
+        function generateOlympiadTask() {
+            const randomIndex = Math.floor(Math.random() * olympiadTaskGenerators.length);
+            currentOlympiadTask = olympiadTaskGenerators[randomIndex]();
+            
+            document.getElementById('olympiad-question').textContent = currentOlympiadTask.question;
+            document.getElementById('olympiad-university').textContent = `Университет: ${currentOlympiadTask.university}`;
+            document.getElementById('olympiad-answer').value = '';
+            document.getElementById('olympiad-result').classList.add('hidden');
+            document.getElementById('olympiad-answer').disabled = false;
+            document.getElementById('olympiad-alert').classList.add('hidden');
+            answeredOlympiad = false;
+        }
+
+        // Проверка ответа на олимпиадную задачу
+        function checkOlympiadAnswer() {
+            const alertDiv = document.getElementById('olympiad-alert');
+            const answerInput = document.getElementById('olympiad-answer');
+            const resultDiv = document.getElementById('olympiad-result');
+            
+            if (answeredOlympiad) {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start">
+                        <div class="mr-2">⚠️</div>
+                        <div>Вы уже ответили! Нажмите 'Новая задача'.</div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-yellow-900/20 text-yellow-400 neon-border';
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+            
+            const userInput = answerInput.value.trim();
+            
+            if (userInput === '') {
+                alertDiv.textContent = 'Пожалуйста, введите ответ';
+                alertDiv.classList.remove('hidden');
+                return;
+            }
+            
+            answeredOlympiad = true;
+            totalTasks++;
+            
+            // Сравнение ответов с учетом округления
+            const userAnswer = parseFloat(userInput.replace(',', '.'));
+            const correctAnswer = parseFloat(currentOlympiadTask.answer);
+            const isCorrect = Math.abs(userAnswer - correctAnswer) < 0.01;
+            
+            if (isCorrect) {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start text-sm">
+                        <div class="mr-2 mt-1">✅</div>
+                        <div>
+                            <p class="font-bold text-green-400">Правильно!</p>
+                            <p class="mt-1">Ответ: <span class="font-mono">${currentOlympiadTask.answer}</span></p>
+                            <details class="mt-1 text-gray-300">
+                                <summary class="cursor-pointer hover:text-white">Показать решение</summary>
+                                <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentOlympiadTask.solution}</div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-green-900/10 neon-border';
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start text-sm">
+                        <div class="mr-2 mt-1">❌</div>
+                        <div>
+                            <p class="font-bold text-red-400">Неправильно</p>
+                            <p class="mt-1">Правильный ответ: <span class="font-mono">${currentOlympiadTask.answer}</span></p>
+                            <details class="mt-1 text-gray-300" open>
+                                <summary class="cursor-pointer hover:text-white">Решение</summary>
+                                <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentOlympiadTask.solution}</div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-red-900/10 neon-border';
+            }
+            
+            resultDiv.classList.remove('hidden');
+            answerInput.disabled = true;
+            
+            // Обновление счетчиков
+            const scoreSpan = document.getElementById('olympiad-score');
+            const totalSpan = document.getElementById('olympiad-total');
+            
+            if (isCorrect) {
+                scoreSpan.textContent = parseInt(scoreSpan.textContent) + 1;
+            }
+            totalSpan.textContent = parseInt(totalSpan.textContent) + 1;
+            
+            updateProgress();
+            logUserAction('olympiad', 'Коллекция олимпиад', isCorrect);
+        }
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            createBubbles();
+            generateDepositTask();
+            setEgeLevel('basic');
+            generateOlympiadTask();
+            
+            // Обработчики для вкладок авторизации
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    switchAuthMode(this.dataset.tab);
+                });
+            });
+            
+            document.getElementById('login-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const errorDiv = document.getElementById('auth-error');
+
+    if (!email || !password) {
+        errorDiv.textContent = 'Пожалуйста, заполните все поля';
+        errorDiv.style.display = 'block';
+        return;
+    }
+
+    try {
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('password', password);
+
+        const response = await fetch('login.php', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.redirected) {
+            window.location.href = response.url; // Перенаправление на profile.php
+        } else {
+            const html = await response.text();
+            document.open();
+            document.write(html);
+            document.close();
+        }
+    } catch (error) {
+        errorDiv.textContent = 'Ошибка сети. Попробуйте позже.';
+        errorDiv.style.display = 'block';
+    }
+});
+            
+            // Обработчик формы регистрации (ИСПРАВЛЕННЫЙ)
+            document.getElementById('register-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const name = document.getElementById('register-name').value.trim();
+                const email = document.getElementById('register-email').value.trim();
+                const password = document.getElementById('register-password').value.trim();
+                const confirm = document.getElementById('register-confirm').value.trim();
+                fetch('/register.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, email: email, password: password })
+                });
+                
+                const errorDiv = document.getElementById('auth-error');
+                errorDiv.style.display = 'none';
+                
+                // Валидация
+                if (!name || !email || !password || !confirm) {
+                    errorDiv.textContent = 'Пожалуйста, заполните все поля';
+                    errorDiv.style.display = 'block';
+                    return;
+                }
+                
+                if (password !== confirm) {
+                    errorDiv.textContent = 'Пароли не совпадают';
+                    errorDiv.style.display = 'block';
+                    return;
+                }
+                
+                // Показать индикатор загрузки
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<div class="neon-loader"></div>';
+                submitBtn.disabled = true;
+                
+                try {
+                    // Отправляем запрос на сервер
+                    const response = await fetch('register.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            email: email,
+                            password: password
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        showToast(data.message);
+                        closeAuthModal();
+                    } else {
+                        errorDiv.textContent = data.message;
+                        errorDiv.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    errorDiv.textContent = 'Ошибка сети. Попробуйте позже.';
+                    errorDiv.style.display = 'block';
+                } finally {
+                    // Восстановить кнопку
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
+            
+            // Обработчик формы восстановления пароля
+            document.getElementById('forgot-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('forgot-email').value;
+                
+                if (!email) {
+                    document.getElementById('auth-error').textContent = 'Пожалуйста, введите email';
+                    document.getElementById('auth-error').style.display = 'block';
+                    return;
+                }
+                
+                // Здесь будет логика восстановления пароля
+                showToast('Инструкции отправлены на ваш email');
+                closeAuthModal();
+            });
+        });
+            // Обработчик решения задач для бд
+            document.getElementById('addActionForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formData = {
+    user_id: parseInt(document.getElementById('userId').value),
+    task_type: document.getElementById('taskType').value.trim(),
+    block: document.getElementById('block').value.trim(),
+    task_details: document.getElementById('taskDetails').value.trim() || null,
+    is_correct: parseInt(document.getElementById('isCorrect').value)
+  };
+
+  fetch('update_stats.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert('Запись успешно добавлена!');
+      document.getElementById('addActionForm').reset();
+      location.reload(); // Перезагрузка для обновления таблицы
+    } else {
+      alert('Ошибка: ' + data.error);
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert('Произошла ошибка при отправке данных');
+  });
+});
+
+        function checkDepositAnswer() {
+            const alertDiv = document.getElementById('deposit-alert');
+            const answerInput = document.getElementById('deposit-answer');
+            const resultDiv = document.getElementById('deposit-result');
+            
+            if (answeredDeposit) {
+                resultDiv.textContent = "Вы уже ответили! Нажмите 'Новая задача'.";
+                resultDiv.className = 'bg-yellow-900/20 text-yellow-400 neon-border';
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+            
+            const userInput = answerInput.value;
+            const userAnswer = parseFloat(userInput);
+            
+            if (isNaN(userAnswer)) {
+                alertDiv.textContent = 'Пожалуйста, введите корректное число';
+                alertDiv.classList.remove('hidden');
+                return;
+            }
+            
+            answeredDeposit = true;
+            totalTasks++;
+            
+            const roundedAnswer = Math.round(userAnswer * 100) / 100;
+            const isCorrect = Math.abs(roundedAnswer - currentDepositTask.correct) < 0.01;
+            
+            if (isCorrect) {
+                resultDiv.textContent = `✅ Правильно! Ответ: ${currentDepositTask.correct.toLocaleString('ru-RU')} руб.`;
+                resultDiv.className = 'bg-green-900/20 text-green-400 neon-border';
+                score++;
+            } else {
+                resultDiv.textContent = `❌ Неправильно. Правильный ответ: ${currentDepositTask.correct.toLocaleString('ru-RU')} руб.`;
+                resultDiv.className = 'bg-red-900/20 text-red-400 neon-border';
+            }
+            
+            resultDiv.classList.remove('hidden');
+            answerInput.disabled = true;
+            
+            const scoreSpan = document.getElementById('deposit-score');
+            scoreSpan.textContent = parseInt(scoreSpan.textContent) + (isCorrect ? 1 : 0);
+            const totalSpan = document.getElementById('deposit-total');
+            totalSpan.textContent = parseInt(totalSpan.textContent) + 1;
+            
+            updateProgress();
+            console.log("Отправляем действие:", {
+        task_type: currentLevel,
+        block: 'Вклады',
+        is_correct: isCorrect ? 1 : 0
+    });
+            logUserAction(currentLevel, 'Вклады', isCorrect);
+        }
+        
+
+        function checkAnnuityAnswer() {
+            const alertDiv = document.getElementById('annuity-alert');
+            const answerInput = document.getElementById('annuity-answer');
+            const resultDiv = document.getElementById('annuity-result');
+            
+            if (answeredAnnuity) {
+                resultDiv.textContent = "Вы уже ответили! Нажмите 'Новая задача'.";
+                resultDiv.className = 'bg-yellow-900/20 text-yellow-400 neon-border';
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+            
+            const userInput = answerInput.value;
+            const userAnswer = parseFloat(userInput);
+            
+            if (isNaN(userAnswer)) {
+                alertDiv.textContent = 'Пожалуйста, введите корректное число';
+                alertDiv.classList.remove('hidden');
+                return;
+            }
+            
+            answeredAnnuity = true;
+            totalTasks++;
+            
+            const roundedAnswer = Math.round(userAnswer * 100) / 100;
+            const isCorrect = Math.abs(roundedAnswer - currentAnnuityTask.correct) < 0.01;
+            
+            if (isCorrect) {
+                resultDiv.textContent = `✅ Правильно! Ответ: ${currentAnnuityTask.correct.toLocaleString('ru-RU')} руб.`;
+                resultDiv.className = 'bg-green-900/20 text-green-400 neon-border';
+                score++;
+            } else {
+                resultDiv.textContent = `❌ Неправильно. Правильный ответ: ${currentAnnuityTask.correct.toLocaleString('ru-RU')} руб.`;
+                resultDiv.className = 'bg-red-900/20 text-red-400 neon-border';
+            }
+            
+            resultDiv.classList.remove('hidden');
+            answerInput.disabled = true;
+            
+            const scoreSpan = document.getElementById('annuity-score');
+            scoreSpan.textContent = parseInt(scoreSpan.textContent) + (isCorrect ? 1 : 0);
+            const totalSpan = document.getElementById('annuity-total');
+            totalSpan.textContent = parseInt(totalSpan.textContent) + 1;
+            
+            updateProgress();
+            console.log("Отправляем действие:", {
+        task_type: currentLevel,
+        block: 'Вклады',
+        is_correct: isCorrect ? 1 : 0
+    });
+            logUserAction(currentLevel, 'Аннуитетный кредит', isCorrect);
+        }
+
+        function checkDiffAnswer() {
+            const alertDiv = document.getElementById('diff-alert');
+            const answerInput = document.getElementById('diff-answer');
+            const resultDiv = document.getElementById('diff-result');
+            
+            if (answeredDiff) {
+                resultDiv.textContent = "Вы уже ответили! Нажмите 'Новая задача'.";
+                resultDiv.className = 'bg-yellow-900/20 text-yellow-400 neon-border';
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+            
+            const userInput = answerInput.value;
+            const parts = userInput.trim().split(/\s+/);
+            
+            if (parts.length !== 2 || isNaN(parts[0]) || isNaN(parts[1])) {
+                alertDiv.textContent = 'Пожалуйста, введите два числа через пробел';
+                alertDiv.classList.remove('hidden');
+                return;
+            }
+            
+            answeredDiff = true;
+            totalTasks++;
+            
+            const userAnswer1 = parseFloat(parts[0]);
+            const userAnswer2 = parseFloat(parts[1]);
+            const isCorrect = Math.abs(userAnswer1 - currentDiffTask.firstPayment) < 0.01 && 
+                             Math.abs(userAnswer2 - currentDiffTask.lastPayment) < 0.01;
+            
+            if (isCorrect) {
+                resultDiv.textContent = `✅ Правильно! Ответ: ${currentDiffTask.firstPayment.toLocaleString('ru-RU')} руб. и ${currentDiffTask.lastPayment.toLocaleString('ru-RU')} руб.`;
+                resultDiv.className = 'bg-green-900/20 text-green-400 neon-border';
+                score++;
+            } else {
+                resultDiv.textContent = `❌ Неправильно. Правильный ответ: ${currentDiffTask.firstPayment.toLocaleString('ru-RU')} руб. и ${currentDiffTask.lastPayment.toLocaleString('ru-RU')} руб.`;
+                resultDiv.className = 'bg-red-900/20 text-red-400 neon-border';
+            }
+            
+            resultDiv.classList.remove('hidden');
+            answerInput.disabled = true;
+            
+            const scoreSpan = document.getElementById('diff-score');
+            scoreSpan.textContent = parseInt(scoreSpan.textContent) + (isCorrect ? 1 : 0);
+            const totalSpan = document.getElementById('diff-total');
+            totalSpan.textContent = parseInt(totalSpan.textContent) + 1;
+            
+            updateProgress();
+            logUserAction(currentLevel, 'Дифференцированный кредит', isCorrect);
+        }
+
+        function checkInvestAnswer() {
+            const alertDiv = document.getElementById('invest-alert');
+            const answerInput = document.getElementById('invest-answer');
+            const resultDiv = document.getElementById('invest-result');
+            
+            if (answeredInvest) {
+                resultDiv.textContent = "Вы уже ответили! Нажмите 'Новая задача'.";
+                resultDiv.className = 'bg-yellow-900/20 text-yellow-400 neon-border';
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+            
+            const userInput = answerInput.value;
+            const userAnswer = parseFloat(userInput);
+            
+            if (isNaN(userAnswer)) {
+                alertDiv.textContent = 'Пожалуйста, введите корректное число';
+                alertDiv.classList.remove('hidden');
+                return;
+            }
+            
+            answeredInvest = true;
+            totalTasks++;
+            
+            const roundedAnswer = Math.round(userAnswer * 100) / 100;
+            const isCorrect = Math.abs(roundedAnswer - currentInvestTask.correct) < 0.01;
+            
+            if (isCorrect) {
+                resultDiv.textContent = `✅ Правильно! Ответ: ${currentInvestTask.correct.toLocaleString('ru-RU')} руб.`;
+                resultDiv.className = 'bg-green-900/20 text-green-400 neon-border';
+                score++;
+            } else {
+                resultDiv.textContent = `❌ Неправильно. Правильный ответ: ${currentInvestTask.correct.toLocaleString('ru-RU')} руб.`;
+                resultDiv.className = 'bg-red-900/20 text-red-400 neon-border';
+            }
+            
+            resultDiv.classList.remove('hidden');
+            answerInput.disabled = true;
+            
+            const scoreSpan = document.getElementById('invest-score');
+            scoreSpan.textContent = parseInt(scoreSpan.textContent) + (isCorrect ? 1 : 0);
+            const totalSpan = document.getElementById('invest-total');
+            totalSpan.textContent = parseInt(totalSpan.textContent) + 1;
+            
+            updateProgress();
+            console.log("Отправляем действие:", {
+        task_type: currentLevel,
+        block: 'Вклады',
+        is_correct: isCorrect ? 1 : 0
+    });
+            logUserAction(currentLevel, 'Инвестиции', isCorrect);
+        }
+
+        function checkEgeAnswer() {
+            const alertDiv = document.getElementById('ege-alert');
+            const answerInput = document.getElementById('ege-answer');
+            const resultDiv = document.getElementById('ege-result');
+            
+            if (answeredEge) {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start">
+                        <div class="mr-2">⚠️</div>
+                        <div>Вы уже ответили! Нажмите 'Новая задача'.</div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-yellow-900/20 text-yellow-400 neon-border';
+                resultDiv.classList.remove('hidden');
+                return;
+            }
+            
+            const userInput = answerInput.value.trim();
+            
+            if (userInput === '') {
+                alertDiv.textContent = 'Пожалуйста, введите ответ';
+                alertDiv.classList.remove('hidden');
+                return;
+            }
+            
+            answeredEge = true;
+            totalTasks++;
+            egeTasksCompleted++;
+            
+            const isCorrect = userInput === currentEgeTask.correct;
+            const pointsEarned = currentLevel === 'basic' ? 1 : 2;
+            
+            if (isCorrect) {
+                egeTotalScore += pointsEarned;
+                resultDiv.innerHTML = `
+                    <div class="flex items-start text-sm">
+                        <div class="mr-2 mt-1">✅</div>
+                        <div>
+                            <p class="font-bold text-green-400">Правильно! +${pointsEarned} балл${pointsEarned > 1 ? 'а' : ''}</p>
+                            <p class="mt-1">Ответ: <span class="font-mono">${currentEgeTask.correct}</span></p>
+                            <details class="mt-1 text-gray-300">
+                                <summary class="cursor-pointer hover:text-white">Показать решение</summary>
+                                <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentEgeTask.solution}</div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-green-900/10 neon-border';
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="flex items-start text-sm">
+                        <div class="mr-2 mt-1">❌</div>
+                        <div>
+                            <p class="font-bold text-red-400">Неправильно</p>
+                            <p class="mt-1">Правильный ответ: <span class="font-mono">${currentEgeTask.correct}</span></p>
+                            <details class="mt-1 text-gray-300" open>
+                                <summary class="cursor-pointer hover:text-white">Решение</summary>
+                                <div class="mt-1 bg-gray-900/50 p-2 rounded">${currentEgeTask.solution}</div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'result-container bg-red-900/10 neon-border';
+            }
+            
+            resultDiv.classList.remove('hidden');
+            answerInput.disabled = true;
+            
+            // Обновление счетчиков
+            document.getElementById('ege-score').textContent = egeTotalScore;
+            document.getElementById('ege-tasks').textContent = `${egeTasksCompleted}/10`;
+            
+            // Проверка завершения 10 задач
+            if (egeTasksCompleted >= 10) {
+                const maxPossible = currentLevel === 'basic' ? 10 : 20;
+                resultDiv.innerHTML += `<br><br><strong>Тест завершен!</strong> Вы набрали ${egeTotalScore} баллов из ${maxPossible} возможных.`;
+                document.getElementById('ege-answer').disabled = true;
+                document.getElementById('ege-new-task-btn').disabled = true;
+            }
+            
+            updateProgress();
+            console.log("Отправляем действие:", {
+        task_type: currentLevel,
+        block: 'Вклады',
+        is_correct: isCorrect ? 1 : 0
+    });
+            logUserAction(currentLevel, 'ЕГЭ', isCorrect);
+        }
+
+        function generateDepositTask() {
+            let principal, rate, years, isCompound;
+            
+            if (currentLevel === 'basic') {
+                principal = Math.floor(Math.random() * 90000) + 10000;
+                rate = Math.floor(Math.random() * 11) + 5;
+                years = Math.floor(Math.random() * 5) + 1;
+                isCompound = Math.random() > 0.5;
+            } else {
+                // Более сложные задачи для повышенного уровня
+                principal = Math.floor(Math.random() * 900000) + 100000;
+                rate = Math.floor(Math.random() * 15) + 5;
+                years = Math.floor(Math.random() * 10) + 1;
+                isCompound = true; // В повышенном уровне всегда сложные проценты
+                
+                // 30% вероятности добавить ежемесячную капитализацию
+                if (Math.random() < 0.3) {
+                    const monthlyRate = rate / 12;
+                    const months = years * 12;
+                    
+                    currentDepositTask = {
+                        correct: principal * Math.pow(1 + monthlyRate / 100, months),
+                        question: `Вклад ${formatNumber(principal)} руб. под ${rate}% годовых на ${years} ${getYearWord(years)} с ежемесячной капитализацией. Сколько получит клиент?`
+                    };
+                    
+                    document.getElementById('deposit-question').textContent = currentDepositTask.question;
+                    document.getElementById('deposit-answer').value = '';
+                    document.getElementById('deposit-result').classList.add('hidden');
+                    document.getElementById('deposit-answer').disabled = false;
+                    document.getElementById('deposit-alert').classList.add('hidden');
+                    answeredDeposit = false;
+                    return;
+                }
+            }
+            
+            if (isCompound) {
+                currentDepositTask = {
+                    correct: principal * Math.pow(1 + rate / 100, years),
+                    question: `Вклад ${formatNumber(principal)} руб. под ${rate}% годовых на ${years} ${getYearWord(years)} с капитализацией. Сколько получит клиент?`
+                };
+            } else {
+                currentDepositTask = {
+                    correct: principal * (1 + rate / 100 * years),
+                    question: `Вклад ${formatNumber(principal)} руб. под ${rate}% годовых на ${years} ${getYearWord(years)} без капитализации. Сколько получит клиент?`
+                };
+            }
+            
+            document.getElementById('deposit-question').textContent = currentDepositTask.question;
+            document.getElementById('deposit-answer').value = '';
+            document.getElementById('deposit-result').classList.add('hidden');
+            document.getElementById('deposit-answer').disabled = false;
+            document.getElementById('deposit-alert').classList.add('hidden');
+            answeredDeposit = false;
+        }
+
+        function generateAnnuityTask() {
+            let principal, rate, years;
+            
+            if (currentLevel === 'basic') {
+                principal = Math.floor(Math.random() * 900000) + 100000;
+                rate = Math.floor(Math.random() * 11) + 10;
+                years = Math.floor(Math.random() * 5) + 1;
+            } else {
+                // Более сложные задачи для повышенного уровня
+                principal = Math.floor(Math.random() * 5000000) + 1000000;
+                rate = Math.floor(Math.random() * 15) + 10;
+                years = Math.floor(Math.random() * 10) + 1;
+                
+                // 30% вероятности добавить комиссию
+                if (Math.random() < 0.3) {
+                    const commission = Math.floor(Math.random() * 5) + 1;
+                    const months = years * 12;
+                    const monthlyRate = rate / 100 / 12;
+                    const payment = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / 
+                                   (Math.pow(1 + monthlyRate, months) - 1);
+                    
+                    currentAnnuityTask = {
+                        correct: payment + (principal * commission / 100 / 12),
+                        question: `Кредит ${formatNumber(principal)} руб. под ${rate}% годовых на ${years} ${getYearWord(years)} с аннуитетными платежами. Банк берёт ${commission}% от суммы кредита в качестве ежемесячной комиссии. Какой будет ежемесячный платёж?`
+                    };
+                    
+                    document.getElementById('annuity-question').textContent = currentAnnuityTask.question;
+                    document.getElementById('annuity-answer').value = '';
+                    document.getElementById('annuity-result').classList.add('hidden');
+                    document.getElementById('annuity-answer').disabled = false;
+                    document.getElementById('annuity-alert').classList.add('hidden');
+                    answeredAnnuity = false;
+                    return;
+                }
+            }
+            
+            const months = years * 12;
+            const monthlyRate = rate / 100 / 12;
+            
+            currentAnnuityTask = {
+                correct: principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1),
+                question: `Кредит ${formatNumber(principal)} руб. под ${rate}% годовых на ${years} ${getYearWord(years)} с аннуитетными платежами. Какой будет ежемесячный платёж?`
+            };
+            
+            document.getElementById('annuity-question').textContent = currentAnnuityTask.question;
+            document.getElementById('annuity-answer').value = '';
+            document.getElementById('annuity-result').classList.add('hidden');
+            document.getElementById('annuity-answer').disabled = false;
+            document.getElementById('annuity-alert').classList.add('hidden');
+            answeredAnnuity = false;
+        }
+
+        function generateDiffTask() {
+            let principal, rate, years;
+            
+            if (currentLevel === 'basic') {
+                principal = Math.floor(Math.random() * 900000) + 100000;
+                rate = Math.floor(Math.random() * 11) + 10;
+                years = Math.floor(Math.random() * 5) + 1;
+            } else {
+                // Более сложные задачи для повышенного уровня
+                principal = Math.floor(Math.random() * 5000000) + 1000000;
+                rate = Math.floor(Math.random() * 15) + 10;
+                years = Math.floor(Math.random() * 10) + 1;
+                
+                // 30% вероятности добавить комиссию
+                if (Math.random() < 0.3) {
+                    const commission = Math.floor(Math.random() * 5) + 1;
+                    const months = years * 12;
+                    const monthlyPrincipal = principal / months;
+                    const firstPayment = monthlyPrincipal + principal * (rate / 100 / 12) + (principal * commission / 100);
+                    const lastPayment = monthlyPrincipal + monthlyPrincipal * (rate / 100 / 12) + (monthlyPrincipal * commission / 100);
+                    
+                    currentDiffTask = {
+                        firstPayment: firstPayment,
+                        lastPayment: lastPayment,
+                        question: `Кредит ${formatNumber(principal)} руб. под ${rate}% годовых на ${years} ${getYearWord(years)} с дифференцированными платежами. Банк берёт ${commission}% от остатка долга в качестве ежемесячной комиссии. Какой будет первый и последний платежи? (введите через пробел)`
+                    };
+                    
+                    document.getElementById('diff-question').textContent = currentDiffTask.question;
+                    document.getElementById('diff-answer').value = '';
+                    document.getElementById('diff-result').classList.add('hidden');
+                    document.getElementById('diff-answer').disabled = false;
+                    document.getElementById('diff-alert').classList.add('hidden');
+                    answeredDiff = false;
+                    return;
+                }
+            }
+            
+            const months = years * 12;
+            const monthlyPrincipal = principal / months;
+            
+            currentDiffTask = {
+                firstPayment: monthlyPrincipal + principal * (rate / 100 / 12),
+                lastPayment: monthlyPrincipal + monthlyPrincipal * (rate / 100 / 12),
+                question: `Кредит ${formatNumber(principal)} руб. под ${rate}% годовых на ${years} ${getYearWord(years)} с дифференцированными платежами. Какой будет первый и последний платежи? (введите через пробел)`
+            };
+            
+            document.getElementById('diff-question').textContent = currentDiffTask.question;
+            document.getElementById('diff-answer').value = '';
+            document.getElementById('diff-result').classList.add('hidden');
+            document.getElementById('diff-answer').disabled = false;
+            document.getElementById('diff-alert').classList.add('hidden');
+            answeredDiff = false;
+        }
+
+        function generateInvestTask() {
+            let target, rate, years;
+            
+            if (currentLevel === 'basic') {
+                target = Math.floor(Math.random() * 9000000) + 1000000;
+                rate = Math.floor(Math.random() * 8) + 5;
+                years = Math.floor(Math.random() * 15) + 5;
+                
+                currentInvestTask = {
+                    correct: target / Math.pow(1 + rate / 100, years),
+                    question: `Какую сумму вам нужно инвестировать сегодня под ${rate}% годовых, чтобы через ${years} ${getYearWord(years)} получить ${formatNumber(target)} руб.?`
+                };
+            } else {
+                // Более сложные задачи для повышенного уровня
+                target = Math.floor(Math.random() * 90000000) + 10000000;
+                rate = Math.floor(Math.random() * 15) + 5;
+                years = Math.floor(Math.random() * 30) + 10;
+                
+                // 30% вероятности добавить ежемесячное пополнение
+                if (Math.random() < 0.3) {
+                    const monthlyPayment = Math.floor(Math.random() * 50000) + 10000;
+                    const monthlyRate = rate / 12 / 100;
+                    const months = years * 12;
+                    const futureValue = monthlyPayment * (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+                    
+                    currentInvestTask = {
+                        correct: futureValue,
+                        question: `Вы планируете ежемесячно вносить ${formatNumber(monthlyPayment)} руб. на инвестиционный счёт под ${rate}% годовых с ежемесячной капитализацией. Какую сумму вы накопите через ${years} ${getYearWord(years)}?`
+                    };
+                    
+                    document.getElementById('invest-question').textContent = currentInvestTask.question;
+                    document.getElementById('invest-answer').value = '';
+                    document.getElementById('invest-result').classList.add('hidden');
+                    document.getElementById('invest-answer').disabled = false;
+                    document.getElementById('invest-alert').classList.add('hidden');
+                    answeredInvest = false;
+                    return;
+                }
+                
+                currentInvestTask = {
+                    correct: target / Math.pow(1 + rate / 100, years),
+                    question: `Какую сумму вам нужно инвестировать сегодня под ${rate}% годовых, чтобы через ${years} ${getYearWord(years)} получить ${formatNumber(target)} руб.?`
+                };
+            }
+            
+            document.getElementById('invest-question').textContent = currentInvestTask.question;
+            document.getElementById('invest-answer').value = '';
+            document.getElementById('invest-result').classList.add('hidden');
+            document.getElementById('invest-answer').disabled = false;
+            document.getElementById('invest-alert').classList.add('hidden');
+            answeredInvest = false;
+        }
+
+        function generateEgeTask() {
+            // Проверка завершения 10 задач
+            if (egeTasksCompleted >= 10) {
+                document.getElementById('ege-question').textContent = "Вы уже решили 10 задач. Максимальное количество задач достигнуто.";
+                document.getElementById('ege-answer').disabled = true;
+                document.getElementById('ege-new-task-btn').disabled = true;
+                return;
+            }
+            
+            // Генерация задач для ЕГЭ в зависимости от уровня сложности
+            if (currentLevel === 'basic') {
+                generateBasicEgeTask();
+            } else {
+                generateAdvancedEgeTask();
+            }
+        }
+
+        function generateBasicEgeTask() {
+            // Генерация базовых задач (№15)
+            const taskTypes = ['deposit', 'credit', 'discount'];
+            const type = taskTypes[Math.floor(Math.random() * taskTypes.length)];
+            
+            let question, correct, solution;
+            const amount = Math.round((10000 + Math.random() * 90000) / 1000) * 1000; // Сумма от 10к до 100к, кратная 1000
+            const years = 1 + Math.floor(Math.random() * 5); // От 1 до 5 лет
+            const rate = 5 + Math.floor(Math.random() * 16); // Ставка от 5% до 20%
+            
+            switch(type) {
+                case 'deposit':
+                    // Вклад с капитализацией
+                    const capitalization = ['ежегодно', 'ежеквартально', 'ежемесячно'][Math.floor(Math.random() * 3)];
+                    let periodsPerYear, totalPeriods;
+                    
+                    if (capitalization === 'ежегодно') {
+                        periodsPerYear = 1;
+                        totalPeriods = years;
+                    } else if (capitalization === 'ежеквартально') {
+                        periodsPerYear = 4;
+                        totalPeriods = years * 4;
+                    } else {
+                        periodsPerYear = 12;
+                        totalPeriods = years * 12;
+                    }
+                    
+                    const periodRate = rate / periodsPerYear / 100;
+                    const finalAmount = Math.round(amount * Math.pow(1 + periodRate, totalPeriods));
+                    
+                    question = `Вкладчик положил в банк ${amount.toLocaleString('ru-RU')} рублей под ${rate}% годовых с капитализацией ${capitalization}. Какая сумма будет на счету через ${years} ${years === 1 ? 'год' : years < 5 ? 'года' : 'лет'}?`;
+                    correct = finalAmount.toString();
+                    solution = `Используем формулу сложных процентов: S = P × (1 + r)^n = ${amount} × (1 + ${periodRate.toFixed(4)})^{${totalPeriods}} ≈ ${finalAmount} руб.`;
+                    break;
+                    
+                case 'credit':
+                    // Аннуитетный кредит
+                    const months = years * 12;
+                    const monthlyRate = rate / 12 / 100;
+                    const annuityPayment = Math.round(amount * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1));
+                    
+                    question = `Кредит в ${amount.toLocaleString('ru-RU')} рублей выдан под ${rate}% годовых на ${years} ${years === 1 ? 'год' : years < 5 ? 'года' : 'лет'} с аннуитетными платежами. Найдите ежемесячный платеж.`;
+                    correct = annuityPayment.toString();
+                    solution = `Месячная ставка: ${rate}%/12 = ${(rate/12).toFixed(2)}%. Количество месяцев: ${months}. Платёж = (${amount}×${monthlyRate.toFixed(4)}×(1+${monthlyRate.toFixed(4)})^{${months}})/((1+${monthlyRate.toFixed(4)})^{${months}}-1) ≈ ${annuityPayment} руб.`;
+                    break;
+                    
+                case 'discount':
+                    // Дисконтирование
+                    const futureAmount = Math.round((amount * (1 + 0.1 * Math.random())) / 1000) * 1000;
+                    const discountRate = 5 + Math.floor(Math.random() * 11); // От 5% до 15%
+                    const presentValue = Math.round(futureAmount / Math.pow(1 + discountRate/100, years));
+                    
+                    question = `Какую сумму нужно положить в банк под ${discountRate}% годовых с ежегодной капитализацией, чтобы через ${years} ${years === 1 ? 'год' : years < 5 ? 'года' : 'лет'} получить ${futureAmount.toLocaleString('ru-RU')} рублей?`;
+                    correct = presentValue.toString();
+                    solution = `Используем формулу дисконтирования: P = S / (1 + r)^n = ${futureAmount} / (1 + ${discountRate/100})^{${years}} ≈ ${presentValue} руб.`;
+                    break;
+            }
+            
+            currentEgeTask = {
+                correct: correct,
+                question: question,
+                solution: solution
+            };
+            
+            document.getElementById('ege-question').textContent = currentEgeTask.question;
+            document.getElementById('ege-answer').value = '';
+            document.getElementById('ege-result').classList.add('hidden');
+            document.getElementById('ege-answer').disabled = false;
+            document.getElementById('ege-alert').classList.add('hidden');
+            answeredEge = false;
+        }
+
+        function generateAdvancedEgeTask() {
+            // Генерация сложных задач (№17)
+            const taskTypes = ['two-payments', 'equal-reduction', 'varying-payments', 'deposit-additions'];
+            const type = taskTypes[Math.floor(Math.random() * taskTypes.length)];
+            
+            let question, correct, solution;
+            const amount = Math.round((1000000 + Math.random() * 9000000) / 100000) * 100000; // От 1 млн до 10 млн
+            const years = 2 + Math.floor(Math.random() * 4); // От 2 до 5 лет
+            const rate = 10 + Math.floor(Math.random() * 21); // Ставка от 10% до 30%
+            
+            switch(type) {
+                case 'two-payments':
+                    // Кредит с двумя равными платежами
+                    const totalAmount = amount * Math.pow(1 + rate/100, 2);
+                    const payment = Math.round(totalAmount / (1 + (1 + rate/100)));
+                    
+                    question = `31 декабря 2024 года заемщик взял в банке ${(amount/1000000).toLocaleString('ru-RU')} млн рублей в кредит под ${rate}% годовых. Схема выплаты кредита следующая — 31 декабря каждого следующего года банк начисляет проценты на оставшуюся сумму долга, затем заемщик переводит в банк X рублей. Какой должна быть сумма X, чтобы заемщик выплатил долг двумя равными платежами?`;
+                    correct = payment.toString();
+                    solution = `После первого года долг составит: ${amount} × 1.${rate} = ${Math.round(amount * (1 + rate/100))}. После выплаты X руб. останется: ${Math.round(amount * (1 + rate/100))} - X. На второй год остаток увеличивается на ${rate}%: (${Math.round(amount * (1 + rate/100))} - X) × 1.${rate}. После второй выплаты X руб. долг должен быть погашен: (${Math.round(amount * (1 + rate/100))} - X) × 1.${rate} - X = 0. Решая уравнение, получаем X = ${payment} руб.`;
+                    break;
+                    
+                case 'equal-reduction':
+                    // Кредит с равномерным уменьшением долга
+                    const months = years * 12;
+                    const totalPayment = Math.round(amount * (1 + 0.3 + 0.1 * Math.random())); // Общая выплата на 30-40% больше
+                    const r = Math.round((totalPayment/amount - 1) * 10 * 100) / 100; // Расчетная ставка
+                    
+                    question = `15 января планируется взять кредит в банке на ${months} месяцев. Условия его возврата таковы: 1-го числа каждого месяца долг возрастает на r% по сравнению с концом предыдущего месяца; со 2-го по 14-е число каждого месяца необходимо выплатить часть долга; 15-го числа каждого месяца долг должен быть на одну и ту же сумму меньше долга на 15-е число предыдущего месяца. Известно, что общая сумма выплат после полного погашения кредита на ${Math.round((totalPayment/amount - 1)*100)}% больше суммы, взятой в кредит. Найдите r.`;
+                    correct = r.toString();
+                    solution = `Пусть сумма кредита S. По условию, долг уменьшается равномерно: каждый месяц на S/${months}. Проценты: (S + (S - S/${months}) + (S - 2S/${months}) + ... + S/${months}) × r/100 = S × (1 + ${months-1}/${months} + ${months-2}/${months} + ... + 1/${months}) × r/100 = S × (${months+1}/2) × r/100 = ${(months+1)/200}S × r. Итого выплаты: S + ${(months+1)/200}S × r = ${totalPayment/amount}S ⇒ ${(months+1)/200} × r = ${totalPayment/amount - 1} ⇒ r = ${r}.`;
+                    break;
+                    
+                case 'varying-payments':
+                    // Кредит с разными платежами по годам
+                    const annualPayment = Math.round(amount / years);
+                    const totalInterest = annualPayment * rate/100 * (years + 1) / 2;
+                    const totalPaymentVar = amount + totalInterest;
+                    
+                    question = `В июле планируется взять кредит на сумму ${(amount/1000000).toLocaleString('ru-RU')} млн рублей на ${years} ${years === 1 ? 'год' : years < 5 ? 'года' : 'лет'}. Условия возврата: каждый январь долг возрастает на ${rate}% по сравнению с концом предыдущего года; с февраля по июнь каждого года необходимо выплатить часть долга; в июле каждого года долг должен быть на одну и ту же сумму меньше долга на июль предыдущего года. Сколько рублей составит общая сумма выплат?`;
+                    correct = Math.round(totalPaymentVar).toString();
+                    solution = `Ежегодное уменьшение долга: ${amount} / ${years} = ${annualPayment} руб. Проценты: (${amount} + ${amount - annualPayment} + ${amount - 2*annualPayment} + ... + ${annualPayment}) × ${rate/100} = ${amount} × ${(years + 1)/2} × ${rate/100} = ${totalInterest} руб. Общая сумма выплат: ${amount} + ${totalInterest} = ${Math.round(totalPaymentVar)} руб.`;
+                    break;
+                    
+                case 'deposit-additions':
+                    // Вклад с ежегодными пополнениями
+                    const additions = Math.round((100000 + Math.random() * 400000) / 10000) * 10000; // Пополнения от 100к до 500к
+                    const finalAmount = Math.round(amount * Math.pow(1 + rate/100, 5) + additions * (Math.pow(1 + rate/100, 4) + Math.pow(1 + rate/100, 3) + Math.pow(1 + rate/100, 2) + (1 + rate/100)));
+                    
+                    question = `В банк помещена сумма ${(amount/1000000).toLocaleString('ru-RU')} млн рублей под ${rate}% годовых. В конце каждого из первых четырех лет хранения после начисления процентов вкладчик дополнительно вносил на счет ${additions.toLocaleString('ru-RU')} рублей. Какая сумма будет на счету к концу пятого года?`;
+                    correct = finalAmount.toString();
+                    solution = `Через 5 лет основная сумма составит: ${amount} × 1.${rate}^5 ≈ ${Math.round(amount * Math.pow(1 + rate/100, 5))} руб. Добавки с процентами: ${additions} × (1.${rate}^4 + 1.${rate}^3 + 1.${rate}^2 + 1.${rate}) ≈ ${Math.round(additions * (Math.pow(1 + rate/100, 4) + Math.pow(1 + rate/100, 3) + Math.pow(1 + rate/100, 2) + (1 + rate/100)))} руб. Итого: ${Math.round(amount * Math.pow(1 + rate/100, 5))} + ${Math.round(additions * (Math.pow(1 + rate/100, 4) + Math.pow(1 + rate/100, 3) + Math.pow(1 + rate/100, 2) + (1 + rate/100)))} ≈ ${finalAmount} руб.`;
+                    break;
+            }
+            
+            currentEgeTask = {
+                correct: correct,
+                question: question,
+                solution: solution
+            };
+            
+            document.getElementById('ege-question').textContent = currentEgeTask.question;
+            document.getElementById('ege-answer').value = '';
+            document.getElementById('ege-result').classList.add('hidden');
+            document.getElementById('ege-answer').disabled = false;
+            document.getElementById('ege-alert').classList.add('hidden');
+            answeredEge = false;
+        }
+
+        // Вспомогательные функции
+        function formatNumber(num) {
+            return new Intl.NumberFormat('ru-RU').format(Math.round(num));
+        }
+
+        function getYearWord(years) {
+            const lastDigit = years % 10;
+            const lastTwoDigits = years % 100;
+            
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 19) return 'лет';
+            if (lastDigit === 1) return 'год';
+            if (lastDigit >= 2 && lastDigit <= 4) return 'года';
+            return 'лет';
+        }
+        
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar-menu');
+            const overlay = document.getElementById('menu-overlay');
+            sidebar.classList.toggle('open');
+            overlay.style.display = sidebar.classList.contains('open') ? 'block' : 'none';
+        }
+
+        function closeMenu() {
+            document.getElementById('sidebar-menu').classList.remove('open');
+            document.getElementById('menu-overlay').style.display = 'none';
+        }
+
+        // Close menu on ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+        document.getElementById('close-menu').addEventListener('click', () => {
+            closeMenu();
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+    </script>
+<script>
+  // Получаем элементы DOM
+  const userPanel = document.getElementById('user-panel');
+  const tooltip = document.getElementById('tooltip-content');
+
+  // Добавляем обработчики событий для показа/скрытия tooltip
+  userPanel.addEventListener('mouseenter', () => {
+    fetchUserData(); // Запрашиваем данные при наведении
+    tooltip.classList.add('show');
+  });
+
+  userPanel.addEventListener('mouseleave', () => {
+    tooltip.classList.remove('show');
+  });
+
+  /**
+   * Функция загрузки данных пользователя
+   */
+  async function fetchUserData() {
+    // Очистка текущего содержимого tooltip
+    tooltip.innerHTML = `
+      <div class="animate-pulse">
+        <div class="h-4 bg-gray-700 rounded w-3/4 mb-2"></div>
+        <div class="h-4 bg-gray-700 rounded w-full mb-2"></div>
+        <div class="h-4 bg-gray-700 rounded w-5/6 mb-2"></div>
+        <div class="h-4 bg-gray-700 rounded w-4/6"></div>
+      </div>
+    `;
+
+    try {
+      // Выполняем запрос к /user_data.php
+      const response = await fetch('/user_data.php');
+
+      if (!response.ok) {
+        throw new Error(`Ошибка сети: ${response.status} ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      if (data.error) {
+        // Если ошибка — выводим сообщение
+        tooltip.innerHTML = `
+          <div class="text-red-400 text-sm">
+            <p>Ошибка загрузки данных:</p>
+            <p class="text-xs mt-1">${data.error}</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Форматируем дату
+      function formatDate(dateString) {
+        if (!dateString) return 'Неизвестно';
+        const date = new Date(dateString);
+        return date.toLocaleString('ru-RU');
+      }
+
+      // Выводим данные в tooltip
+      tooltip.innerHTML = `
+        <div class="text-sm space-y-2">
+          <p><strong>Имя:</strong> ${data.user?.username || '—'}</p>
+          <p><strong>Email:</strong> ${data.user?.email || '—'}</p>
+          <p><strong>ID:</strong> ${data.user?.id || '—'}</p>
+          <p><strong>Дата регистрации:</strong> ${formatDate(data.user?.created_at)}</p>
+          ${data.last_login ? `
+            <p><strong>Последний вход:</strong> ${formatDate(data.last_login.login_time)}</p>
+            <p class="text-xs text-gray-400">IP: ${data.last_login.ip}</p>
+          ` : '<p><strong>Последний вход:</strong> Неизвестен</p>'}
+        </div>
+      `;
+
+    } catch (error) {
+      // Ловим и отображаем ошибки
+      console.error('Ошибка:', error.message);
+      tooltip.innerHTML = `
+        <div class="text-red-400 text-sm">
+          <p>Ошибка загрузки данных:</p>
+          <p class="text-xs mt-1">${error.message}</p>
+        </div>
+      `;
+    }
+  }
+  async function logUserAction(taskType, block, isCorrect) {
+    try {
+        const response = await fetch('update_stats.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                task_type: taskType,
+                block: block,
+                is_correct: isCorrect ? 1 : 0
+            })
+        });
+
+        const result = await response.json();
+        if (!result.success) {
+            console.error("Ошибка сервера:", result.error);
+        }
+    } catch (error) {
+        console.error("Ошибка сети:", error);
+    }
+}
+function logUserAction(taskType, block, isCorrect) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'update_stats.php', true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+    xhr.onload = function () {
+        if (xhr.status !== 200) {
+            console.error("Ошибка сети:", xhr.status, xhr.statusText);
+        }
+    };
+
+    xhr.onerror = function () {
+        console.error("Запрос к серверу завершился ошибкой");
+    };
+
+    const data = {
+        task_type: taskType,
+        block: block,
+        is_correct: isCorrect ? 1 : 0
+    };
+
+    xhr.send(JSON.stringify(data));
+}
+
+// Глобальные переменные для подсчета попыток
+let egeAttempts = 0;
+const MAX_EGE_ATTEMPTS = 3;
+
+document.querySelectorAll('.check-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const input = this.closest('.answer-container')?.querySelector('.answer-input');
+        const resultDiv = this.closest('.answer-container')?.querySelector('.result');
+
+        if (!input || !resultDiv) return;
+
+        const userAnswer = input.value.trim();
+        const correctAnswer = this.getAttribute('data-answer');
+        const level = this.getAttribute('data-level');
+
+        // Проверяем, что пользователь ввёл число
+        if (!userAnswer || isNaN(userAnswer)) {
+            resultDiv.innerHTML = `<div class="bg-yellow-900/20 text-yellow-400 neon-border p-2 rounded">Введите число</div>`;
+            return;
+        }
+
+        // Увеличиваем счётчик попыток
+        egeAttempts++;
+
+        const highlightCell = document.querySelector(`.highlight[data-answer][data-level='${level}']`);
+
+        if (!highlightCell) {
+            console.error("Не найдена ячейка с классом .highlight");
+            return;
+        }
+
+        if (parseFloat(userAnswer) === parseFloat(correctAnswer)) {
+            resultDiv.innerHTML = `<div class="bg-green-900/20 text-green-400 neon-border p-2 rounded">✅ Верно! Ответ: ${correctAnswer}</div>`;
+            highlightCell.textContent = correctAnswer;
+        } else {
+            if (egeAttempts < MAX_EGE_ATTEMPTS) {
+                resultDiv.innerHTML = `<div class="bg-red-900/20 text-red-400 neon-border p-2 rounded">❌ Неправильно. Осталось попыток: ${MAX_EGE_ATTEMPTS - egeAttempts}</div>`;
+            } else {
+                resultDiv.innerHTML = `<div class="bg-blue-900/20 text-neon-blue neon-border p-2 rounded">⚠️ Попытки закончились. Ответ: ${correctAnswer}</div>`;
+                highlightCell.textContent = correctAnswer; // --- ЗДЕСЬ МЫ МЕНЯЕМ "?" на правильный ответ ---
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
